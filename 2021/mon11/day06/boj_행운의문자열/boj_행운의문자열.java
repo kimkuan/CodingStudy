@@ -1,10 +1,10 @@
-package mon11.day06.boj_행문의문자열;
+package mon11.day06.boj_행운의문자열;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class boj_행문의문자열 {
+public class boj_행운의문자열 {
 	
 	static int N;
 	static int answer = 0;
