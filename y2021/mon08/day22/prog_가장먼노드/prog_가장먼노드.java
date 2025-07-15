@@ -1,9 +1,9 @@
-package com.mon08.day22.prog_°¡Àå¸Õ³ëµå;
+package y2021.mon08.day22.prog_ê°€ìž¥ë¨¼ë…¸ë“œ;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-public class prog_°¡Àå¸Õ³ëµå {
+public class prog_ê°€ìž¥ë¨¼ë…¸ë“œ {
 
 	static int n = 6;
 	static int[][] vertex = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
@@ -26,24 +26,24 @@ public class prog_°¡Àå¸Õ³ëµå {
 		for (int i = 0; i < vertex.length; i++) {
 			int from = vertex[i][0];
 			int to = vertex[i][1];
-			matrix[from].add(to); // ¾ç¹æÇâ ±×·¡ÇÁ
+			matrix[from].add(to); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½
 			matrix[to].add(from);
 		}
 		
-		// ´ÙÀÍ½ºÆ®¶ó ½ÃÀÛ
+		// ï¿½ï¿½ï¿½Í½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		PriorityQueue<Integer> q = new PriorityQueue<>();
-		minEdge[1] = 0; // 1¹ø³ëµå¸¦ Ãâ¹ßÁö·Î Á¤ÇÔ
+		minEdge[1] = 0; // 1ï¿½ï¿½ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		q.add(1);
 		
 		while(!q.isEmpty()) {
 			int current = q.poll();
 			
-			if(visited[current]) // ÀÌ¹Ì ¹æ¹®ÇÑ ³ëµåÀÌ¸é ´Ù½Ã »Ì±â
+			if(visited[current]) // ï¿½Ì¹ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½Ù½ï¿½ ï¿½Ì±ï¿½
 				continue;
 			
 			visited[1] = true;
 		
-			// ÇöÀç ³ëµå¸¦ °æÀ¯ÇØ¼­ °¡´Â°Ô ´õ ºü¸¥Áö vs ¿ø·¡´ë·Î °¡´Â°Ô ´õ ºü¸¥Áö
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vs ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for(int i = 0; i < matrix[current].size(); i++) {
 				int next = matrix[current].get(i);
 				
@@ -54,8 +54,8 @@ public class prog_°¡Àå¸Õ³ëµå {
 			}
 		}
 		
-		int max = 0; // °¡Àå ¸Ö¸® ¶³¾îÁø °Å¸®
-		int maxCount = 0; // °¡Àå ¸Ö¸® ¶³¾îÁø °Å¸®ÀÇ ³ëµå °³¼ö
+		int max = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+		int maxCount = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		for (int i = 1; i <= n; i++) {
 			if(max < minEdge[i]) {
 				max = minEdge[i];

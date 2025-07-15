@@ -1,4 +1,4 @@
-package mon12.day1.boj_¹ì;
+package y2021.mon12.day1.boj_ë±€;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class boj_¹ì {
+public class boj_ë±€ {
 
 	static int N, K, L;
 	static int sx, sy, sd;
@@ -14,7 +14,7 @@ public class boj_¹ì {
 	static HashMap<Integer, Character> direction = new HashMap<Integer, Character>();
 	static ArrayDeque<Place> move = new ArrayDeque<Place>();
 	
-	static int[] dx = {0, 1, 0, -1}; // ¿À¸¥ÂÊ, ¾Æ·¡, ¿ÞÂÊ, À§
+	static int[] dx = {0, 1, 0, -1}; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Æ·ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½
 	static int[] dy = {1, 0, -1, 0};
 	
 	static class Place {
@@ -31,9 +31,9 @@ public class boj_¹ì {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		
-		N = Integer.parseInt(br.readLine()); // º¸µåÀÇ Å©±â
-		K = Integer.parseInt(br.readLine()); // »ç°úÀÇ °³¼ö
-		sx = 1; sy = 1; sd = 0;				 // ¹ìÀÇ ÃÊ±â À§Ä¡¿Í ¹æÇâ
+		N = Integer.parseInt(br.readLine()); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
+		K = Integer.parseInt(br.readLine()); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		sx = 1; sy = 1; sd = 0;				 // ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		map = new int[N+1][N+1];	
 
@@ -41,7 +41,7 @@ public class boj_¹ì {
 			st = new StringTokenizer(br.readLine());
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
-			map[x][y] = 1; // »ç°ú°¡ ÀÖ´Ù¸é 1·Î Ç¥½Ã
+			map[x][y] = 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ 1ï¿½ï¿½ Ç¥ï¿½ï¿½
 		}
 		
 		L = Integer.parseInt(br.readLine());
@@ -61,24 +61,24 @@ public class boj_¹ì {
 			
 			totalTime++;
 			
-			// ´ÙÀ½ À§Ä¡·Î ÀÌµ¿
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½
 			sx += dx[sd];
 			sy += dy[sd];
 			
-			// º® ¶Ç´Â ÀÚ±âÀÚ½Å°ú ¸öÀÌ ºÎµúÈ÷¸é °ÔÀÓ ³¡
+			// ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Ú±ï¿½ï¿½Ú½Å°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			if((sx <= 0 || sx > N || sy <= 0 || sy > N) || map[sx][sy] == 2) {
 				break;
 			}
-			// ÀÌµ¿ÇÑ Ä­¿¡ »ç°ú°¡ ¾ø´Ù¸é
+			// ï¿½Ìµï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½
 			else if(!move.isEmpty() && map[sx][sy] != 1) {
 				Place tail = move.poll();
-				map[tail.x][tail.y] = 0; // ºóÄ­À¸·Î º¯°æ
+				map[tail.x][tail.y] = 0; // ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			}
 	
 			map[sx][sy] = 2;
 			move.add(new Place(sx, sy));
 			
-			// ÇöÀç ½Ã°£¿¡ È¸Àü¸í·ÉÀÌ ÀÖ´ÂÁö
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½
 			if(direction.containsKey(totalTime)) {
 				rotate(direction.get(totalTime));
 			}
@@ -87,7 +87,7 @@ public class boj_¹ì {
 		System.out.println(totalTime);
 	}
 
-	// ¹ìÀÇ ¹æÇâÀ» È¸ÀüÇÏ´Â ¸Þ¼Òµå
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
 	static void rotate(char dir) {
 		if(dir == 'D')
 			sd = sd == 3 ? 0 : sd+1;

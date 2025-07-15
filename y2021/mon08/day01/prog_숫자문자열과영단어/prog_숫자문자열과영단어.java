@@ -1,6 +1,6 @@
-package com.mon08.day01.prog_¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î;
+package y2021.mon08.day01.prog_ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´;
 
-public class prog_¼ıÀÚ¹®ÀÚ¿­°ú¿µ´Ü¾î {
+public class prog_ìˆ«ìë¬¸ìì—´ê³¼ì˜ë‹¨ì–´ {
 
 	static String[] englishNumber = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 	static String s = "one4seveneight";

@@ -1,4 +1,4 @@
-package mon09.day17.boj_¹ì;
+package y2021.mon09.day17.boj_ë±€;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class boj_¹ì {
+public class boj_ë±€ {
 	
 	static int N, K, L;
 	static int[][] map;
@@ -42,7 +42,7 @@ public class boj_¹ì {
 		N = Integer.parseInt(br.readLine());
 		K = Integer.parseInt(br.readLine());
 		
-		map = new int[N+1][N+1]; // (1, 1)ºÎÅÍ ½ÃÀÛ. ¹ìÀÌ ÀÖÀ¸¸é 1, »ç°ú°¡ ÀÖÀ¸¸é 2
+		map = new int[N+1][N+1]; // (1, 1)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2
 		
 		for (int i = 0; i < K; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
@@ -60,8 +60,8 @@ public class boj_¹ì {
 			q.add(new Direction(sec, dir));
 		}
 		
-		// °ÔÀÓ ½ÃÀÛ!
-		int sx = 1, sy = 1, d = 0; // ¹ìÀÇ ½ÃÀÛ À§Ä¡¿Í ¹æÇâ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!
+		int sx = 1, sy = 1, d = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int time = 0;
 		
 		map[sx][sy] = 1;
@@ -73,11 +73,11 @@ public class boj_¹ì {
 			sx = sx + dx[d];
 			sy = sy + dy[d];
 			
-			// º®À» ³Ñ¾î°¡¸é break
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ break
 			if(sx <= 0 || sx > N || sy <= 0 || sy > N)
 				break;
 			
-			// »ç°ú°¡ ¾øÀ¸¸é ¹ìÀÇ ²¿¸®´Â ÁÙÀÌ±â 
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½ 
 			if(map[sx][sy] == 0) {
 				if(!log.isEmpty()){
 					Place tail = log.poll();
@@ -90,7 +90,7 @@ public class boj_¹ì {
 			map[sx][sy] = 1;
 			log.add(new Place(sx, sy));
 			
-			// °ÔÀÓ ½ÃÀÛ ½Ã°£À¸·ÎºÎÅÍ XÃÊ°¡ '³¡³­' µÚ¿¡ ¹æÇâ È¸Àü
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ Xï¿½Ê°ï¿½ 'ï¿½ï¿½ï¿½ï¿½' ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
 			if(!q.isEmpty() && q.peek().sec == time) {
 				Direction temp = q.poll();
 				

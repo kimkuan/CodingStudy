@@ -1,11 +1,11 @@
-package com.mon08.day07.prog_Çà·ÄÅ×µÎ¸®È¸ÀüÇÏ±â;
+package y2021.mon08.day07.prog_í–‰ë ¬í…Œë‘ë¦¬íšŒì „í•˜ê¸°;
 
-public class prog_Çà·ÄÅ×µÎ¸®È¸ÀüÇÏ±â {
+public class prog_í–‰ë ¬í…Œë‘ë¦¬íšŒì „í•˜ê¸° {
 
 	static int rows = 3;
 	static int columns = 3;
 	static int[][] queries = {{1,1,2,2,}, {1,2,2,3}, {2,1,3,2}, {2,2,3,3}};
-	static int[][] map = new int[rows+1][columns+1]; // (1, 1)ºÎÅÍ ½ÃÀÛ
+	static int[][] map = new int[rows+1][columns+1]; // (1, 1)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
 	public static void main(String[] args) {
 
@@ -25,7 +25,7 @@ public class prog_Çà·ÄÅ×µÎ¸®È¸ÀüÇÏ±â {
 	
 	private static int rotate(int x1, int y1, int x2, int y2) {
 		int start = map[x1][y1];
-		int min = start; // ½ÃÀÛÁ¡ °ª ³Ö¾îµÎ±â
+		int min = start; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö¾ï¿½Î±ï¿½
 		int dx = x1;
 		int dy = y1;
 		

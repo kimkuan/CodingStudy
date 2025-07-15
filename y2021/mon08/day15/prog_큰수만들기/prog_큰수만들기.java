@@ -1,8 +1,8 @@
-package com.mon08.day15.prog_Å«¼ö¸¸µé±â;
+package y2021.mon08.day15.prog_í°ìˆ˜ë§Œë“¤ê¸°;
 
 import java.util.Stack;
 
-public class prog_Å«¼ö¸¸µé±â {
+public class prog_í°ìˆ˜ë§Œë“¤ê¸° {
 
 	static String number = "8";
 	static int k = 1;
@@ -11,18 +11,18 @@ public class prog_Å«¼ö¸¸µé±â {
 		
 		Stack<Character> before = new Stack<>();
 		Stack<Character> after = new Stack<>();
-		StringBuilder sb = new StringBuilder(); // ¸¸µé ¼ö ÀÖ´Â °¡Àå Å« ¼ıÀÚ
+		StringBuilder sb = new StringBuilder(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½
 
-		for(int i = number.length()-1; i >= 0; i--) { // ¸Ç ¾Õ ¼ıÀÚ°¡ °¡Àå ¸Ç À§·Î ¿Ã¶ó¿À
+		for(int i = number.length()-1; i >= 0; i--) { // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½
 			before.push(number.charAt(i));
 		}
 		
 		while(!before.isEmpty() && k > 0) {
-			char pop = before.pop(); // ¸Ç À§¿¡ ÀÖ´Â °ªÀ» ÇÏ³ª ²¨³¿
+			char pop = before.pop(); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-			// after¿¡ ÀÖ´Â °ªµé Áß¿¡¼­ ÀÚ½Åº¸´Ù ÀÛÀº°ªÀÌ¸é out 
+			// afterï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½Ú½Åºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ out 
 			while(!after.isEmpty() && k > 0) {
-				if(after.peek() < pop) { // ÇöÀç »ÌÀº ¼ö°¡ ´õ Å©¸é after¿¡ ÀÖ´Â °ªÀ» »­
+				if(after.peek() < pop) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Å©ï¿½ï¿½ afterï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 					after.pop();
 					k--;
 				}
@@ -32,7 +32,7 @@ public class prog_Å«¼ö¸¸µé±â {
 			after.push(pop);
 		}
 		
-		// before¿¡ ³²¾ÆÀÖ´Â °ªÀ» ¸ğµÎ push
+		// beforeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ push
 		while(!before.isEmpty()) {
 			after.push(before.pop());
 		}

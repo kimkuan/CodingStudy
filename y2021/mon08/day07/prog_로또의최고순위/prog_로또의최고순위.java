@@ -1,6 +1,6 @@
-package com.mon08.day07.prog_·Î¶ÇÀÇÃÖ°í¼øÀ§;
+package y2021.mon08.day07.prog_ë¡œë˜ì˜ìµœê³ ìˆœìœ„;
 
-public class prog_·Î¶ÇÀÇÃÖ°í¼øÀ§ {
+public class prog_ë¡œë˜ì˜ìµœê³ ìˆœìœ„ {
 
 	static int[] lottos  = {44, 1, 0, 0, 31, 25};
 	static int[] win_nums = {31, 10, 45, 1, 6, 19};

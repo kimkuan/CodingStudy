@@ -1,12 +1,12 @@
-package mon08.day08.boj_¸Ó¸®ÅåÅå;
+package y2021.mon08.day08.boj_ë¨¸ë¦¬í†¡í†¡;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class boj_¸Ó¸®ÅåÅå {
+public class boj_ë¨¸ë¦¬í†¡í†¡ {
 	
-	static int[] count = new int[1000001]; // ÇĞ»ıµéÀÌ °¡Áö°í ÀÖ´Â ¼ıÀÚµé °³¼ö Ä«¿îÆ®
+	static int[] count = new int[1000001]; // ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ®
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,7 +16,7 @@ public class boj_¸Ó¸®ÅåÅå {
 		
 		for (int i = 0; i < N; i++) {
 			number[i] = Integer.parseInt(br.readLine());
-			count[number[i]] += 1; // ±âÁ¸ÀÇ °³¼ö + 1
+			count[number[i]] += 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ + 1
 		}	
 		
 		for (int i = 0; i < N; i++) {
@@ -24,14 +24,14 @@ public class boj_¸Ó¸®ÅåÅå {
 			int answer = 0;
 			int size =  (int) Math.sqrt(n);
 			for (int j = 1; j <= Math.sqrt(n); j++) {
-				if(n % j == 0) { // NÀº jÀÇ ¹è¼ö°¡ ¾Æ´Ò ¶§´Â PASS
+				if(n % j == 0) { // Nï¿½ï¿½ jï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½ PASS
 					answer += count[j];
 					
-					if(j*j < n) // Á¦°ö±ÙÀÌ ¾Æ´Ï¸é j¿Í Â¦À» ÀÌ·ç´Â ¾à¼öµµ °³¼ö ±¸ÇÔ ex) 16ÀÇ °ø¾à¼ö (1,16) (2, 8)
+					if(j*j < n) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ jï¿½ï¿½ Â¦ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ex) 16ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ (1,16) (2, 8)
 						answer += count[n/j];
 				}
 			}
-			sb.append(answer-1).append("\n"); // ÀÚ±âÀÚ½ÅÀº Á¦¿Ü
+			sb.append(answer-1).append("\n"); // ï¿½Ú±ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		System.out.print(sb);
 	}

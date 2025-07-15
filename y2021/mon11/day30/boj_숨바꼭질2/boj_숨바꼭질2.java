@@ -1,11 +1,11 @@
-package mon11.day30.boj_¼û¹Ù²ÀÁú2;
+package y2021.mon11.day30.boj_ìˆ¨ë°”ê¼­ì§ˆ2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class boj_¼û¹Ù²ÀÁú2 {
+public class boj_ìˆ¨ë°”ê¼­ì§ˆ2 {
 	
 	static int N, K;
 	static int timeResult, countResult;
@@ -26,21 +26,21 @@ public class boj_¼û¹Ù²ÀÁú2 {
 	
 	private static void findSister() {
 		ArrayDeque<Integer> q = new ArrayDeque<>();
-		int[] visited = new int[100001]; // ÀÌ¹Ì ÀÌµ¿ÇÑ À§Ä¡¿¡ ´ëÇÑ ÃÖ¼Ò ½Ã°£ ÀúÀå
+		int[] visited = new int[100001]; // ï¿½Ì¹ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int time = 0;
 		
-		// ¼öºóÀÌÀÇ À§Ä¡¿¡¼­ ½ÃÀÛ
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		q.add(N);
 		visited[N] = -1;
 
-		// ½ÃÀÛºÎÅÍ °°Àº À§Ä¡¿¡ ÀÖÀ» ¶§
+		// ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		if(N == K) {
 			timeResult = 0;
 			countResult = 1;
 			return;
 		}
 
-		// ¾Æ´Ï¶ó¸é, µ¿»ý Ã£±â
+		// ï¿½Æ´Ï¶ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
 		while(!q.isEmpty()) {
 			int size = q.size();
 			time++;
@@ -52,13 +52,13 @@ public class boj_¼û¹Ù²ÀÁú2 {
 				for(int j = 0; j < 3; j++) {
 					next = nextStep(x, j);
 				
-					// ¾ÆÁ÷ ¹æ¹®ÇÑ ÀûÀÌ ¾ø°Å³ª, ÃÖ¼Ò ½Ã°£¾È¿¡ ¹æ¹®ÇÑ °æ¿ì
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½, ï¿½Ö¼ï¿½ ï¿½Ã°ï¿½ï¿½È¿ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½
 					if(next >= 0 && next <= 100000 && (visited[next] == 0 || visited[next] == time)) {
 						q.add(next);
 						visited[next] = time;
 					}
 					
-					// µ¿»ýÀ» Ã£¾Ò´Ù¸é
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Ò´Ù¸ï¿½
 					if(next == K) {
 						timeResult = time;
 						countResult += 1;
@@ -66,7 +66,7 @@ public class boj_¼û¹Ù²ÀÁú2 {
 				}
 			}
 
-			// ÀÌ¹Ì µ¿»ýÀ» Ã£¾Ò´Ù¸é, ´õÀÌ»ó ½ÃµµÇÏÁö X
+			// ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Ò´Ù¸ï¿½, ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ X
 			if(countResult > 0)
 				break;
 		}

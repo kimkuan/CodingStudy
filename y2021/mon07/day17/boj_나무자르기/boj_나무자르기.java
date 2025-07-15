@@ -1,11 +1,11 @@
-package mon07.day17.boj_³ª¹«ÀÚ¸£±â;
+package y2021.mon07.day17.boj_ë‚˜ë¬´ìë¥´ê¸°;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_³ª¹«ÀÚ¸£±â {
+public class boj_ë‚˜ë¬´ìë¥´ê¸° {
 
 	static int N, M;
 	static int[] tree;
@@ -15,13 +15,13 @@ public class boj_³ª¹«ÀÚ¸£±â {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		N = Integer.parseInt(st.nextToken()); // ³ª¹«ÀÇ °³¼ö
-		M = Integer.parseInt(st.nextToken()); // ÇÊ¿äÇÑ ³ª¹«ÀÇ ±æÀÌ
+		N = Integer.parseInt(st.nextToken()); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		M = Integer.parseInt(st.nextToken()); // ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		tree = new int[N];
 	
 		st = new StringTokenizer(br.readLine());
 		
-		long max = Integer.MIN_VALUE; // ÁÖ¾îÁø ³ª¹«¿¡¼­ °¡Àå Å« ³ª¹«ÀÇ ³ôÀÌ
+		long max = Integer.MIN_VALUE; // ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		for (int i = 0; i < N; i++) {
 			tree[i] = Integer.parseInt(st.nextToken());
 			max = Math.max(max, tree[i]);
@@ -33,18 +33,18 @@ public class boj_³ª¹«ÀÚ¸£±â {
 	private static void binarySearch(long start, long end) {
 		
 		while(start <= end) {
-			long mid = (start+end)/2; // mid = ÇöÀç ¼±ÅÃÇÑ ³ôÀÌ H
+			long mid = (start+end)/2; // mid = ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ H
 			long count = 0;
-			// ¸ğµç ³ª¹«¸¦ º£¾úÀ» ¶§, ³ª¿À´Â ³ª¹«ÀÇ ±æÀÌ °è»ê
+			// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			for(int i = 0; i < N; i++) {
-				if(tree[i] <= mid) continue; // ¼±ÅÃÇÑ ³ôÀÌ°¡ ³ª¹«º¸´Ù ³ôÀ¸¸é PASS
+				if(tree[i] <= mid) continue; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ PASS
 				count += tree[i]-mid;
 			}
-			if(count >= M) { // Àû¾îµµ Mº¸´Ù Å©°Å³ª °°À¸¸é -> ³ôÀÌ¸¦ Áõ°¡½ÃÄÑº¸ÀÚ
+			if(count >= M) { // ï¿½ï¿½ï¿½îµµ Mï¿½ï¿½ï¿½ï¿½ Å©ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½ï¿½
 				maxHeight = Math.max(mid, maxHeight);
 				start = mid+1;
 			}
-			else { // ÇÕÀÌ Mº¸´Ù ÀûÀ¸¸é -> ³ôÀÌ¸¦ °¨¼Ò½ÃÄÑº¸ÀÚ
+			else { // ï¿½ï¿½ï¿½ï¿½ Mï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Ñºï¿½ï¿½ï¿½
 				end = mid-1;
 			}
 		}

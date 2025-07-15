@@ -1,14 +1,14 @@
-package com.mon10.day14.jo_ÁÖ»çÀ§´øÁö±â1;
+package y2021.mon10.day14.jo_ì£¼ì‚¬ìœ„ë˜ì§€ê¸°1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class jo_ÁÖ»çÀ§´øÁö±â1 {
+public class jo_ì£¼ì‚¬ìœ„ë˜ì§€ê¸°1 {
 
-	static int N; // ÁÖ»çÀ§¸¦ ´øÁø È½¼ö
-	static int M; // Ãâ·Â ¸ğ¾ç (1: ¸ğµç °æ¿ì, 2: Áßº¹ Á¦¿Ü : 3: ¸ğµÎ ´Ù¸¥ ¼ö°¡ ³ª¿Ã °æ¿ì)
+	static int N; // ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½
+	static int M; // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ (1: ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 2: ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ : 3: ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
 	static int[] arr;
 	static boolean[] visited;
 	

@@ -1,4 +1,4 @@
-package mon10.day09.boj_ÀÎ±¸ÀÌµ¿;
+package y2021.mon10.day09.boj_ì¸êµ¬ì´ë™;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class boj_ÀÎ±¸ÀÌµ¿ {
+public class boj_ì¸êµ¬ì´ë™ {
 
 	static class Country{
 		int x;
@@ -21,8 +21,8 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 	}
 	
 	static class Union {
-		int totalCount; // ÃÑ ±¹°¡¼ö
-		int totalPerson; // ÃÑ ÀÎ±¸¼ö
+		int totalCount; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int totalPerson; // ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
 		
 		public Union(int totalCount , int totalPerson) {
 			this.totalCount = totalCount;
@@ -37,8 +37,8 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 	}
 	
 	static int N, L, R;
-	static int[][] map; // ÀÎ±¸ ¼ö
-	static int[] parent; // ¿¬ÇÕÀÇ ¹øÈ£ (r,c) -> r*N + c
+	static int[][] map; // ï¿½Î±ï¿½ ï¿½ï¿½
+	static int[] parent; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ (r,c) -> r*N + c
 	static boolean[][] visited;
 	static HashMap<Integer, Union> sumOfUnion = new HashMap<Integer, Union>();
 	
@@ -61,26 +61,26 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
-				parent[i*N+j] = i*N + j; // ¿¬ÇÕÀÇ ¹øÈ£
+				parent[i*N+j] = i*N + j; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 			}
 		}
 		
-		// 1. BFS¸¦ µ¹¸é¼­ ¿¬ÇÕÀ» Ã£´Â´Ù.
-		// 2. °¢ ¿¬ÇÕÀÇ ÀÎ±¸Æò±ÕÀ» ±¸ÇÏ±â = ÀÎ±¸ÀÌµ¿
+		// 1. BFSï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Â´ï¿½.
+		// 2. ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ = ï¿½Î±ï¿½ï¿½Ìµï¿½
 		int day = 0;
 		boolean exit = true;
 		while(exit) {
 			exit = bfs();
 			
-			if(!exit) // ¿¬ÇÕÀÌ ¸¸µé¾îÁöÁö ¾Ê¾ÒÀ¸¸é BREAK
+			if(!exit) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ BREAK
 				break;
 			
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
-					parent[i*N+j] = find(i*N+j); // 1¹ø ´õ °»½Å
+					parent[i*N+j] = find(i*N+j); // 1ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					
 					if(sumOfUnion.containsKey(parent[i*N+j])) {
-						Union union = sumOfUnion.get(parent[i*N+j]); // ±âÁ¸ÀÇ ¿¬ÇÕ¿¡¼­
+						Union union = sumOfUnion.get(parent[i*N+j]); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ¿ï¿½ï¿½ï¿½
 						sumOfUnion.put(parent[i*N+j], new Union(union.totalCount+1, union.totalPerson+map[i][j]));
 					}
 					else
@@ -101,7 +101,7 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 				Union union = sumOfUnion.get(parent[i*N+j]);
 				map[i][j] = union.totalPerson / union.totalCount;
 				
-				parent[i*N+j] = i*N+j; // ¿¬ÇÕ¹øÈ£ ÃÊ±âÈ­
+				parent[i*N+j] = i*N+j; // ï¿½ï¿½ï¿½Õ¹ï¿½È£ ï¿½Ê±ï¿½È­
 			}
 		}
 	}
@@ -109,7 +109,7 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 
 	private static boolean bfs() {
 		ArrayDeque<Country> q = new ArrayDeque<>();
-		boolean moved = false; // ±¹°æ¼±ÀÌ ¿­¸®´ÂÁö, ¿­¸®Áö ¾Ê´ÂÁö
+		boolean moved = false; // ï¿½ï¿½ï¿½æ¼±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ï¿½ï¿½
 		
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
@@ -127,11 +127,11 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 						
 						if(nx < 0 || nx >= N | ny < 0 || ny >= N || visited[nx][ny]) continue;
 
-						int gap = Math.abs(map[nx][ny] - map[con.x][con.y]); // ÀÎÁ¢ÇÑ µÎ ³ª¶ó°£ÀÇ ÀÎ±¸ Â÷
-						if(gap < L || gap > R) continue; // ±¹°æ¼±ÀÌ ¿­¸®Áö ¾Ê´Â´Ù.
+						int gap = Math.abs(map[nx][ny] - map[con.x][con.y]); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ ï¿½ï¿½
+						if(gap < L || gap > R) continue; // ï¿½ï¿½ï¿½æ¼±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 						
-						int num1 = con.x*N + con.y; // ÇöÀç ±¹°¡¹øÈ£
-						int num2 = nx*N + ny; // ÀÎÁ¢±¹ ±¹°¡¹øÈ£
+						int num1 = con.x*N + con.y; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
+						int num2 = nx*N + ny; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£
 						
 						findUnion(num1, num2);
 						q.add(new Country(nx, ny));
@@ -166,9 +166,9 @@ public class boj_ÀÎ±¸ÀÌµ¿ {
 
 }
 
-// µÎ ³ª¶óÀÇ ÀÎ±¸Â÷ÀÌ°¡ L¸í ÀÌ»ó, R¸í ÀÌÇÏÀÏ ¶§ ±¹°æ¼±ÀÌ ¿­¸°´Ù
-// Á¶°Ç¿¡ ÀÇÇØ ±¹°æ¼±ÀÌ ¸ðµÎ ¿­¸®¸é ÀÎ±¸ÀÌµ¿ ½ÃÀÛ
+// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ Lï¿½ï¿½ ï¿½Ì»ï¿½, Rï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½æ¼±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ¼±ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ÀÎÁ¢ÇÑ Ä­À» ÅëÇØ ÀÌµ¿°¡´ÉÇÏ¸é ±× ±¹°¡µéÀº ÇÏ·çµ¿¾È ¿¬ÇÕÀ» ¸Î´Â´Ù.
-// ¿¬ÇÕÀ» ÀÌ·ç°í ÀÖ´Â °¢ Ä­ÀÇ ÀÎ±¸¼ö = (¿¬ÇÕÀÇ ÀÎ±¸¼ö) / (¿¬ÇÕÀ» ÀÌ·ç´Â Ä­ÀÇ °³¼ö  -> ¼Ò¼öÁ¡Àº ¹ö¸°´Ù
-// ¿¬ÇÕÀ» ÇØÃ¼ÇÏ°í ¸ðµç ±¹°æ¼±À» ´Ý´Â´Ù.
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·çµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î´Â´ï¿½.
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ = (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½) / (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  -> ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ¼±ï¿½ï¿½ ï¿½Ý´Â´ï¿½.

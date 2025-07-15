@@ -1,11 +1,11 @@
-package mon10.day31.boj_¼­·Î´Ù¸¥ºÎºĞ¹®ÀÚ¿­ÀÇ°³¼ö;
+package y2021.mon10.day31.boj_ì„œë¡œë‹¤ë¥¸ë¶€ë¶„ë¬¸ìì—´ì˜ê°œìˆ˜;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 
-public class boj_¼­·Î´Ù¸¥ºÎºĞ¹®ÀÚ¿­ÀÇ°³¼ö {
+public class boj_ì„œë¡œë‹¤ë¥¸ë¶€ë¶„ë¬¸ìì—´ì˜ê°œìˆ˜ {
 
 	static HashSet<String> set = new HashSet<String>();
 	

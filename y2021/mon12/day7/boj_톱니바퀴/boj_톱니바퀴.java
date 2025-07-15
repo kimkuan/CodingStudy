@@ -1,4 +1,4 @@
-package mon12.day7.boj_Åé´Ï¹ÙÄû;
+package y2021.mon12.day7.boj_í†±ë‹ˆë°”í€´;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_Åé´Ï¹ÙÄû {
+public class boj_í†±ë‹ˆë°”í€´ {
 
-	static int N = 4, M = 8;	// 4°³ÀÇ Åé´Ï¹ÙÄû, 8°³ÀÇ Åé´Ï
+	static int N = 4, M = 8;	// 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½, 8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	static int R;
-	static int[][] gears;		// Åé´Ï¹ÙÄûÀÇ Á¤º¸
-	static int[] topIndex;		// °¢ Åé´Ï¹ÙÄûÀÇ 12½Ã ¹æÇâÀ» °¡¸®Å°´Â ÀÎµ¦½º
+	static int[][] gears;		// ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static int[] topIndex;		// ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ 12ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,60 +27,60 @@ public class boj_Åé´Ï¹ÙÄû {
 			}
 		}
 		
-		// Åé´Ï¹ÙÄû È¸Àü
+		// ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
 		R = Integer.parseInt(br.readLine());
 		for (int i = 0; i < R; i++) {
 			st = new StringTokenizer(br.readLine());
-			int num = Integer.parseInt(st.nextToken())-1;	// È¸Àü½ÃÅ³ Åé´Ï¹ÙÄû (0¹øºÎÅÍ ½ÃÀÛ)
-			int dir = Integer.parseInt(st.nextToken());		// È¸Àü ¹æÇâ
+			int num = Integer.parseInt(st.nextToken())-1;	// È¸ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ (0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+			int dir = Integer.parseInt(st.nextToken());		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 			int currentNum = num;
 			int currentDir = dir;
-			int currentLeft = gears[num][calculateIndex(topIndex[num], -2)];	// ÇöÀç Åé´Ï¹ÙÄûÀÇ ¿ŞÂÊ ÀÎµ¦½º
-			int currentRight = gears[num][calculateIndex(topIndex[num], +2)]; // ÇöÀç Åé´Ï¹ÙÄûÀÇ ¿À¸¥ÂÊ ÀÎµ¦½º		
+			int currentLeft = gears[num][calculateIndex(topIndex[num], -2)];	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
+			int currentRight = gears[num][calculateIndex(topIndex[num], +2)]; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½		
 			int nextLeft, nextRight;
 			
-			// ¿ŞÂÊ Å½»ö
+			// ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
 			while(currentNum > 0) {
-				nextRight = gears[currentNum-1][calculateIndex(topIndex[currentNum-1], +2)]; 	// ¿ŞÂÊ Åé´Ï¹ÙÄûÀÇ ¿À¸¥ÂÊ ÀÎµ¦½º
+				nextRight = gears[currentNum-1][calculateIndex(topIndex[currentNum-1], +2)]; 	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 			
-				// ¸Â´ê¾ÆÀÖ´Â ºÎºĞÀÇ ±ØÀÌ °°À¸¸é STOP
+				// ï¿½Â´ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ STOP
 				if(currentLeft == nextRight)
 					break;
 				
-				currentLeft = gears[currentNum-1][calculateIndex(topIndex[currentNum-1], -2)]; // ¿ŞÂÊ Åé´Ï¹ÙÄûÀÇ ¿ŞÂÊ ÀÎµ¦½º		
+				currentLeft = gears[currentNum-1][calculateIndex(topIndex[currentNum-1], -2)]; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½		
 				
-				rotate(currentDir*(-1), currentNum-1);  // ¿ŞÂÊ Åé´Ï¹ÙÄû¸¦ È¸Àü ½ÃÅ´
-				currentNum--;							// ¿ŞÂÊ Åé´Ï¹ÙÄû°¡ ÇöÀç Åé´Ï¹ÙÄû°¡ µÊ
-				currentDir = currentDir * (-1); 		// ÇöÀç È¸ÀüÇÑ ¹æÇâÀÇ ¹İ´ë·Î 
+				rotate(currentDir*(-1), currentNum-1);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Å´
+				currentNum--;							// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				currentDir = currentDir * (-1); 		// ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½İ´ï¿½ï¿½ 
 			}
 			
-			// ÇöÀç Åé´Ï¹ÙÄû ¹øÈ£¿Í ¹æÇâ ÃÊ±âÈ­
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 			currentNum = num;
 			currentDir = dir;
 		
-			// ¿À¸¥ÂÊ Å½»ö
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
 			while(currentNum < N-1) {
-				nextLeft = gears[currentNum+1][calculateIndex(topIndex[currentNum+1], -2)]; 	// ¿À¸¥ÂÊ Åé´Ï¹ÙÄûÀÇ ¿ŞÂÊ ÀÎµ¦½º
+				nextLeft = gears[currentNum+1][calculateIndex(topIndex[currentNum+1], -2)]; 	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 				
-				// ¸Â´ê¾ÆÀÖ´Â ºÎºĞÀÇ ±ØÀÌ °°À¸¸é STOP
+				// ï¿½Â´ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ STOP
 				if(currentRight == nextLeft)
 					break;
 				
-				currentRight = gears[currentNum+1][calculateIndex(topIndex[currentNum+1], +2)]; // ¿À¸¥ÂÊ Åé´Ï¹ÙÄûÀÇ ¿À¸¥ÂÊ ÀÎµ¦½º		
+				currentRight = gears[currentNum+1][calculateIndex(topIndex[currentNum+1], +2)]; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½		
 				
-				rotate(currentDir*(-1), currentNum+1); 	// ¿À¸¥ÂÊ Åé´Ï¹ÙÄû¸¦ È¸Àü ½ÃÅ´
-				currentNum++;							// ¿À¸¥ÂÊ Åé´Ï¹ÙÄû°¡ ÇöÀç Åé´Ï¹ÙÄû°¡ µÊ
-				currentDir = currentDir * (-1); 		// ÇöÀç È¸ÀüÇÑ ¹æÇâÀÇ ¹İ´ë·Î 
+				rotate(currentDir*(-1), currentNum+1); 	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Å´
+				currentNum++;							// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				currentDir = currentDir * (-1); 		// ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½İ´ï¿½ï¿½ 
 			}
 			
-			rotate(dir, num); // ÇöÀç Åé´Ï¹ÙÄû¸¦ È¸Àü ½ÃÅ´
+			rotate(dir, num); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Å´
 		}
 		
 		System.out.println(getResult());
 	}
 	
-	// ÃÑ Á¡¼ö¸¦ °è»êÇÏ´Â ¸Ş¼Òµå
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼Òµï¿½
 	private static int getResult() {
 		int result = 0;
 		for (int i = 0; i < N; i++) {
@@ -90,7 +90,7 @@ public class boj_Åé´Ï¹ÙÄû {
 		return result;
 	}
 	
-	// ¹üÀ§³»¿¡¼­ index °ªÀ» °è»êÇÏ´Â ¸Ş¼Òµå
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼Òµï¿½
 	private static int calculateIndex(int topIndex, int move) {
 		if(move > 0)
 			return topIndex+move >= M ? topIndex-M+move : topIndex+move;
@@ -98,12 +98,12 @@ public class boj_Åé´Ï¹ÙÄû {
 			return topIndex+move < 0 ? topIndex+M+move : topIndex+move; 
 	}
 	
-	// ½ÇÁ¦·Î È¸Àü½ÃÄÑ topIndex °ªÀ» º¯°æÇÏ´Â ¸Ş¼Òµå
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ topIndex ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼Òµï¿½
 	private static void rotate(int dir, int num) {		
-		// ½Ã°è¹æÇâÀ¸·Î È¸Àü
+		// ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
 		if(dir == 1)
 			topIndex[num] = calculateIndex(topIndex[num], -1);
-		// ¹İ½Ã°è¹æÇâÀ¸·Î È¸Àü
+		// ï¿½İ½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
 		else
 			topIndex[num] = calculateIndex(topIndex[num], +1);
 	}

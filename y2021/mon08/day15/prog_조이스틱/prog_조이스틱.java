@@ -1,6 +1,6 @@
-package com.mon08.day15.prog_Á¶ÀÌ½ºÆ½;
+package y2021.mon08.day15.prog_ì¡°ì´ìŠ¤í‹±;
 
-public class prog_Á¶ÀÌ½ºÆ½ {
+public class prog_ì¡°ì´ìŠ¤í‹± {
 	
 	static String name = "JEROEN";
 	public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class prog_Á¶ÀÌ½ºÆ½ {
 		moveCount += (str[0] - 'A');
 		str[0] = 'A';
 
-		// ÀÌµ¿ÀÇ ±âÁØ -> °¡Àå ÃÖ¼ÒÇÑÀ¸·Î ÀÌµ¿ÇÒ ¼ö ÀÖ´Â°¡, ÇÑ ¹æÇâÀ¸·Î ´Þ¸®±â
+		// ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Â°ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ï¿½ï¿½
 		int rightIndex = 0;
 		for(int i = 0; i < name.length(); i++) {
 			rightIndex++;
@@ -25,7 +25,7 @@ public class prog_Á¶ÀÌ½ºÆ½ {
 				break;
 		}
 		
-		// ¿À¸¥ÂÊÀ¸·Î °¡´Â°Ô È½¼ö°¡ ´õ ÀûÀ¸¸é
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ È½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if(rightIndex < leftIndex) {
 			moveCount += rightIndex;
 			for(int i = 1; i < name.length(); i++) {
@@ -33,7 +33,7 @@ public class prog_Á¶ÀÌ½ºÆ½ {
 				str[i] = 'A';
 				if(!isRemain(str))
 					break;
-				moveCount++; // ¿ÞÂÊÀ¸·Î ÀÌµ¿
+				moveCount++; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 			}
 		}
 		else {
@@ -43,7 +43,7 @@ public class prog_Á¶ÀÌ½ºÆ½ {
 				str[i] = 'A';
 				if(!isRemain(str))
 					break;
-				moveCount++; // ¿ÞÂÊÀ¸·Î ÀÌµ¿
+				moveCount++; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 			}
 		}
 		System.out.println(moveCount);

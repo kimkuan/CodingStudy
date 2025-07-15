@@ -1,4 +1,4 @@
-package com.mon09.day11.prog_Æ©ÇÃ;
+package y2021.mon09.day11.prog_íŠœí”Œ;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,48 +6,48 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class prog_Æ©ÇÃ {
+public class prog_íŠœí”Œ {
 	
 	static String s = "{{123}}";
 
 	public static void main(String[] args) {
-		String tuple = s.substring(1, s.length()-1); // ¸Ç ¹Ù±ùÀÇ Áß°ýÈ£´Â Á¦°Å
-		ArrayList<String> list = new ArrayList<String>(); // Áß°ýÈ£¸¦ Á¦°ÅÇÑ »óÅÂ·Î ¸¸µç ¹®ÀÚ¿­ ¹è¿­ -> 2 / 2,1 / 2,1,3 / 2,1,3,4
-		StringBuilder sb = new StringBuilder();// ¹®ÀÚµéÀ» ¸ð¾Æ¼­ ¼ýÀÚ·Î ¸¸µé±â À§ÇÑ SB
+		String tuple = s.substring(1, s.length()-1); // ï¿½ï¿½ ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ß°ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		ArrayList<String> list = new ArrayList<String>(); // ï¿½ß°ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½è¿­ -> 2 / 2,1 / 2,1,3 / 2,1,3,4
+		StringBuilder sb = new StringBuilder();// ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ SB
 		
-		boolean start = false; // Áß°ýÈ£°¡ ¿­·È´ÂÁö À¯¹« (±×·¡¾ß ¹Û¿¡ÀÖ´Â ½°Ç¥¿Í ¾È¿¡ÀÖ´Â ½°Ç¥¸¦ ±¸ºÐ)
+		boolean start = false; // ï¿½ß°ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½×·ï¿½ï¿½ï¿½ ï¿½Û¿ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½È¿ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 		for (int i = 0; i < tuple.length(); i++) {
 			char c = tuple.charAt(i);
 			
-			if(c == '{') { // Áß°ýÈ£ ¿­¸²
+			if(c == '{') { // ï¿½ß°ï¿½È£ ï¿½ï¿½ï¿½ï¿½
 				start = true;
 			}
-			else if(c == '}') { // Áß°ýÈ£ ´ÝÈû -> ÇÏ³ªÀÇ Æ©ÇÃ ¿ø¼Ò¸¦ ¿Ï¼º ½ÃÅ´
-				list.add(sb.toString()); // list¿¡ ÀúÀå
+			else if(c == '}') { // ï¿½ß°ï¿½È£ ï¿½ï¿½ï¿½ï¿½ -> ï¿½Ï³ï¿½ï¿½ï¿½ Æ©ï¿½ï¿½ ï¿½ï¿½ï¿½Ò¸ï¿½ ï¿½Ï¼ï¿½ ï¿½ï¿½Å´
+				list.add(sb.toString()); // listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				sb.setLength(0);
 				start = false;
 			}
 			else {
-				if(start) // Áß°ýÈ£°¡ ¿­¸° »óÅÂ¿¡¼­¸¸ ½°Ç¥¿Í ¼ýÀÚ¸¦ ÀúÀå
+				if(start) // ï¿½ß°ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 					sb.append(c);
 			}
 		}
 
-		// ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ ÀÛÀº ¼ø¼­°¡ Æ©ÇÃ ¿ø¼ÒµéÀÌ ¸¸µé¾îÁø ¼ø¼­ÀÌ¹Ç·Î 
+		// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ©ï¿½ï¿½ ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ 
 		list.sort(new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
-				return Integer.compare(o1.length(), o2.length()); // ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ ÀÛÀº ¼ø¼­´ë·Î Á¤·Ä
+				return Integer.compare(o1.length(), o2.length()); // ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			}
 		});
 		
-		// Á¤·ÄµÈ ¼ø¼­¸¦ ±×´ë·Î ÁöÅ°±â À§ÇØ LinkedHashMap »ç¿ë
+		// ï¿½ï¿½ï¿½Äµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ LinkedHashMap ï¿½ï¿½ï¿½
 		LinkedHashMap<Integer, Boolean> map = new LinkedHashMap<>();
 		for (int i = 0; i < list.size(); i++) {
-			String[] elements = list.get(i).split(","); // Áß°ýÈ£ ¾È¿¡ÀÖ´Â ½°Ç¥¸¦ ±âÁØÀ¸·Î
+			String[] elements = list.get(i).split(","); // ï¿½ß°ï¿½È£ ï¿½È¿ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			
 			for (int j = 0; j < elements.length; j++) {
-				map.put(Integer.parseInt(elements[j]), true); // Á¤¼ö·Î º¯È¯ & map¿¡ ÀúÀå(Áßº¹µÇ´Â ¼ýÀÚ ¾ø±â¿¡ °¡´É)
+				map.put(Integer.parseInt(elements[j]), true); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ & mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½)
 			}
 		}
 		

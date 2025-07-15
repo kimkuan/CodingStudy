@@ -1,10 +1,10 @@
-package mon12.day1.boj_Ãß¿ù;
+package y2021.mon12.day1.boj_ì¶”ì›”;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class boj_Ãß¿ù {
+public class boj_ì¶”ì›” {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -12,33 +12,33 @@ public class boj_Ãß¿ù {
 		String[] inputCars, outCars;
 		int N, result=0;
 		
-		N = Integer.parseInt(br.readLine()); 				// ÅÍ³Î¿¡ µé¾î°£ ÀÚµ¿Â÷ÀÇ ¼ö
-		inputInfo = new HashMap<String, Integer>(); 		// ÅÍ³Î¿¡ µé¾î°£ ÀÚµ¿Â÷ ¹øÈ£¿Í ¼ø¼­¸¦ ÀúÀå
-		outputInfo = new HashMap<String, Integer>();		// ÅÍ³Î¿¡¼­ ³ª¿Â ÀÚµ¿Â÷ ¹øÈ£¿Í ¼ø¼­¸¦ ÀúÀå
-		inputCars = new String[N];							// ÅÍ³Î¿¡¼­ µé¾î°£ ÀÚµ¿Â÷ÀÇ ¹øÈ£¸¦ ¼ø¼­´ë·Î ÀúÀå
-		outCars = new String[N];							// ÅÍ³Î¿¡¼­ ³ª¿Â ÀÚµ¿Â÷ÀÇ ¹øÈ£¸¦ ¼ø¼­´ë·Î ÀúÀå
+		N = Integer.parseInt(br.readLine()); 				// ï¿½Í³Î¿ï¿½ ï¿½ï¿½î°£ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		inputInfo = new HashMap<String, Integer>(); 		// ï¿½Í³Î¿ï¿½ ï¿½ï¿½î°£ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		outputInfo = new HashMap<String, Integer>();		// ï¿½Í³Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		inputCars = new String[N];							// ï¿½Í³Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½î°£ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		outCars = new String[N];							// ï¿½Í³Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
-		// ÅÍ³Î¿¡ µé¾î°£ ¼ø¼­´ë·Î ÀúÀå
+		// ï¿½Í³Î¿ï¿½ ï¿½ï¿½î°£ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		for(int i = 0; i < N; i++) {
 			String carNumber = br.readLine();
 			inputCars[i] = carNumber;
-			inputInfo.put(carNumber, i+1); // 1ºÎÅÍ ½ÃÀÛ
+			inputInfo.put(carNumber, i+1); // 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		
-		// ÅÍ³ÎÀ» ³ª¿Â ¼ø¼­´ë·Î ÀúÀå
+		// ï¿½Í³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		for (int i = 0; i < N; i++) {
 			String carNumber = br.readLine(); 		
 			outCars[i] = carNumber;
-			outputInfo.put(carNumber, i+1); // 1ºÎÅÍ ½ÃÀÛ
+			outputInfo.put(carNumber, i+1); // 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		
-		// ÅÍ³ÎÀ» ³ª¿Â ¼ø¼­´ë·Î ºñ±³ (µé¾î°¥ ¶§ XÂ÷·® º¸´Ù ¾Õ¿¡ ÀÖ¾ú´ø Â÷·®µéÀº ±×´ë·Î ¾Õ¿¡ ÀÖ¾î¾ß ÇÑ´Ù)
+		// ï¿½Í³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (ï¿½ï¿½î°¥ ï¿½ï¿½ Xï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½)
 		for (int i = 0; i < N; i++) {
-			int turn = inputInfo.get(outCars[i]);  // ÇöÀç Â÷·®ÀÌ µé¾î°£ ¼ø¼­
+			int turn = inputInfo.get(outCars[i]);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°£ ï¿½ï¿½ï¿½ï¿½
 						
 			for(int j = 0; j < turn; j++) {
-				int current = outputInfo.get(outCars[i]); // ÇöÀç Â÷·®ÀÌ ³ª¿Â ¼ø¼­
-				int prev = outputInfo.get(inputCars[j]);  // ¿ø·¡ ÀÌÀü¿¡ ³ª¿Í¾ßÇÏ´Â Â÷·®ÀÌ ¾È³ª¿ÔÀ¸¸é Ãß¿ùÇÑ °Í
+				int current = outputInfo.get(outCars[i]); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				int prev = outputInfo.get(inputCars[j]);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¾ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½
 				
 				if(prev > current) {
 					result++;

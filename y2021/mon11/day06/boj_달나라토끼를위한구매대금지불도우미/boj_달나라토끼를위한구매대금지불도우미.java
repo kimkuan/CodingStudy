@@ -1,9 +1,9 @@
-package mon11.day06.boj_´Þ³ª¶óÅä³¢¸¦À§ÇÑ±¸¸Å´ë±ÝÁöºÒµµ¿ì¹Ì;
+package y2021.mon11.day06.boj_ë‹¬ë‚˜ë¼í† ë¼ë¥¼ìœ„í•œêµ¬ë§¤ëŒ€ê¸ˆì§€ë¶ˆë„ìš°ë¯¸;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class boj_´Þ³ª¶óÅä³¢¸¦À§ÇÑ±¸¸Å´ë±ÝÁöºÒµµ¿ì¹Ì {
+public class boj_ë‹¬ë‚˜ë¼í† ë¼ë¥¼ìœ„í•œêµ¬ë§¤ëŒ€ê¸ˆì§€ë¶ˆë„ìš°ë¯¸ {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -37,7 +37,7 @@ public class boj_´Þ³ª¶óÅä³¢¸¦À§ÇÑ±¸¸Å´ë±ÝÁöºÒµµ¿ì¹Ì {
 			if(i >= 1) 
 				dp[i] = Math.min(dp[i], dp[i-1]);
 			
-			dp[i] += 1; // 1, 2, 5, 7¿ø Áß ÇÏ³ª¸¦ ´õ »ç¿ëÇßÀ¸¹Ç·Î +1	
+			dp[i] += 1; // 1, 2, 5, 7ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ +1	
 		}
 		
 		System.out.println(dp[cost]);

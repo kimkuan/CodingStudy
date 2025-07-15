@@ -1,4 +1,4 @@
-package mon10.day15.boj_Áß·®Á¦ÇÑ;
+package y2021.mon10.day15.boj_ì¤‘ëŸ‰ì œí•œ;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_Áß·®Á¦ÇÑ {
+public class boj_ì¤‘ëŸ‰ì œí•œ {
 
 	static int N, M, startNode, endNode;
 	static int result = 0;
@@ -32,7 +32,7 @@ public class boj_Áß·®Á¦ÇÑ {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		matrix = new ArrayList[N+1];
-		visited = new boolean[N+1]; // Á¤Á¡ÀÇ ¹æºÐ¿©ºÎ Ã¼Å©
+		visited = new boolean[N+1]; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ Ã¼Å©
 		
 		for (int i = 0; i <= N; i++) {
 			matrix[i] = new ArrayList<Node>();
@@ -47,7 +47,7 @@ public class boj_Áß·®Á¦ÇÑ {
 			
 			matrix[start].add(new Node(end, weight));
 			matrix[end].add(new Node(start, weight));
-			high = Math.max(high, weight); // ÀÌºÐÅ½»ö¿¡ ¾²ÀÏ high °ª 
+			high = Math.max(high, weight); // ï¿½Ìºï¿½Å½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ high ï¿½ï¿½ 
 		}
 		
 		st = new StringTokenizer(br.readLine());
@@ -64,10 +64,10 @@ public class boj_Áß·®Á¦ÇÑ {
 		while(start <= end) {
 			int mid = (start+end)/2;
 			
-			if(bfs(mid)) { // µµÂøÁ¡¿¡ µµÂøÇÒ ¼ö ÀÖÀ¸¸é Áõ·® ++
-				result = Math.max(result, mid); // °¡´ÉÇÑ ÃÖ´ëÁõ·® Ã£±â
+			if(bfs(mid)) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ++
+				result = Math.max(result, mid); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
 				start = mid+1;
-			}else { // µµÂøÁ¡¿¡ µµÂøÇÒ ¼ö ¾øÀ¸¸é Áõ·® --
+			}else { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ --
 				end = mid-1;
 			}
 		}
@@ -75,7 +75,7 @@ public class boj_Áß·®Á¦ÇÑ {
 
 	private static boolean bfs(int mid) {
 		ArrayDeque<Integer> q = new ArrayDeque<>();
-		Arrays.fill(visited, false); // ¹æ¹® ¿©ºÎ ÃÊ±âÈ­
+		Arrays.fill(visited, false); // ï¿½æ¹® ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
 		q.add(startNode);
 		visited[startNode] = true;
@@ -83,14 +83,14 @@ public class boj_Áß·®Á¦ÇÑ {
 		while(!q.isEmpty()) {
 			int current = q.poll();
 			
-			if(current == endNode) { // µµÂøÁö¿¡ µµÂø!
+			if(current == endNode) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!
 				return true;
 			}
 		
 			for(int i = 0; i < matrix[current].size(); i++) {
 				Node next = matrix[current].get(i);
 				
-				if(!visited[next.end] && next.weight >= mid) { // ÇöÀç ¹«°ÔÁß·®À¸·Î °Ç³Î ¼ö ÀÖ´Â ´Ù¸®ÀÎÁö
+				if(!visited[next.end] && next.weight >= mid) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½
 					q.add(next.end);
 					visited[next.end] = true;
 				}
@@ -101,5 +101,5 @@ public class boj_Áß·®Á¦ÇÑ {
 	}
 }
 
-// Áß·®Á¦ÇÑÀº 10¾ï±îÁö °¡´ÉÇÏ´Ù -> for¹®À¸·Î 10¾ï¹ø µ¹¸®¸é ½Ã°£ÃÊ°ú
+// ï¿½ß·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ -> forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½Ê°ï¿½
 

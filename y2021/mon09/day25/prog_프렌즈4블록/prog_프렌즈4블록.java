@@ -1,11 +1,11 @@
-package com.mon09.day25.prog_га╥╩аН4╨М╥о;
+package y2021.mon09.day25.prog_М■└К═▄Л╕┬4К╦■К║²;
 
 import java.util.ArrayDeque;
 
-public class prog_га╥╩аН4╨М╥о {
+public class prog_М■└К═▄Л╕┬4К╦■К║² {
 
-	static int m = 6; // ЁТюл
-	static int n = 6; // фЬ
+	static int m = 6; // О©╫О©╫О©╫О©╫
+	static int n = 6; // О©╫О©╫
 	static String[] board = {"TTTANT", "RRFACC", "RRRFCC", "TRRRAA", "TTMMMF", "TMMTTJ"};
 	static char[][] boardMap;
 	
@@ -31,7 +31,7 @@ public class prog_га╥╩аН4╨М╥о {
 		System.out.println(answer);
 	}
 	
-	// аЖ©ЖаЗ ╨М╥оюл юж╢баЖ е╫╩Ж (╦г ©чбй + ю╖ д╜ю╩ ╠Баью╦╥н 2x2 е╫╩Ж)
+	// О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫ж╢О©╫О©╫О©╫ е╫О©╫О©╫ (О©╫О©╫ О©╫О©╫О©╫О©╫ + О©╫О©╫ д╜О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 2x2 е╫О©╫О©╫)
 	private static boolean searchBlock() {
 		
 		for (int i = 0; i < m-1; i++) {
@@ -40,11 +40,11 @@ public class prog_га╥╩аН4╨М╥о {
 				char leftTop = boardMap[i][j];
 				boolean remove = true;
 				
-				// ╨Сд╜юл╦И PASS
+				// О©╫О©╫д╜О©╫л╦О©╫ PASS
 				if(leftTop == '.')
 					continue;
 				
-				// rightTop, leftBottom, rightBottom╟З ╨Я╠Ё 
+				// rightTop, leftBottom, rightBottomО©╫О©╫ О©╫О©╫ 
 				for(int k = 1; k < 4; k++) {
 					if(leftTop != boardMap[i+dx[k]][j+dy[k]]) {
 						remove = false;
@@ -52,7 +52,7 @@ public class prog_га╥╩аН4╨М╥о {
 					}
 				}
 				
-				// 4╟Ёюг ╨М╥оюл ╦П╣н ╟╟ю╦╦И leftTopю╩ е╔©║ Ёж╠Б (╩Г╤СаЖ╢б ╨М╥оюг ╠Баь)
+				// 4О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ leftTopО©╫О©╫ е╔О©╫О©╫ О©╫ж╠О©╫ (О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫)
 				if(remove)
 					q.add(new int[] {i, j});
 			}
@@ -60,7 +60,7 @@ public class prog_га╥╩аН4╨М╥о {
 		return q.isEmpty();
 	}
 	
-	// ╨М╥о аЖ©Л╠Б
+	// О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫
 	private static int removeBlock() {
 		int totalCount = 0;
 		
@@ -79,13 +79,13 @@ public class prog_га╥╩аН4╨М╥о {
 		return totalCount;
 	}
 	
-	// ╨М╥ою╩ ╬ф╥║╥н Ё╩╦╡
+	// О©╫О©╫О©╫О©╫О©╫ О©╫ф╥О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	private static void falldown() {
 		
 		ArrayDeque<Character> temp = new ArrayDeque<>();
 		
 		for(int i = 0; i < n; i++) {
-			// ╬ф╥║©║╪╜ ю╖ ╧ФгБю╦╥н ╨М╥ою╩ е╫╩Жго╦Г е╔©║ юЗюЕго╠Б
+			// О©╫ф╥О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ е╫О©╫О©╫О©╫о╦О©╫ е╔О©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╠О©╫
 			for(int j = m-1 ; j >= 0; j--) {
 				if(boardMap[j][i] == '.')
 					continue;
@@ -94,7 +94,7 @@ public class prog_га╥╩аН4╨М╥о {
 				boardMap[j][i] = '.';
 			}
 			
-			// е╔©║ юЗюЕ╣х ╨М╥о╣Ию╩ ╬ф╥║©║╪╜╨нем ц╓©Ж Ёж╠Б
+			// е╔О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫о╣О©╫О©╫О©╫ О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ ц╓О©╫О©╫ О©╫ж╠О©╫
 			int j = m-1;
 			while(!temp.isEmpty()) {
 				boardMap[j][i] = temp.poll();
@@ -106,5 +106,5 @@ public class prog_га╥╩аН4╨М╥о {
 
 
 
-// ╤Ё╬НаЖ╢б ╟мю╨ е╔╥н ╠╦гЖ 
-// ╬ф╥║©║╪╜╨нем е╔©║ Ёж╟М ╢ы Ёж╬Зю╦╦И е╔©║╪╜ ╩╘╪╜ ╬ф╥║©║╪╜╨нем ц╓©ЖЁж╠Б
+// О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ е╔О©╫О©╫ О©╫О©╫О©╫О©╫ 
+// О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ е╔О©╫О©╫ О©╫ж╟О©╫ О©╫О©╫ О©╫ж╬О©╫О©╫О©╫О©╫О©╫ е╔О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ ц╓О©╫О©╫О©╫ж╠О©╫

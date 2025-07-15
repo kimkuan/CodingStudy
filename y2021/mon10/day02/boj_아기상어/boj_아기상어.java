@@ -1,4 +1,4 @@
-package mon10.day02.boj_¾Æ±â»ó¾î;
+package y2021.mon10.day02.boj_ì•„ê¸°ìƒì–´;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,12 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class boj_¾Æ±â»ó¾î {
+public class boj_ì•„ê¸°ìƒì–´ {
 	
 	static int answer = 0;
-	static int sx, sy, ssize, seat; // »ó¾îÀÇ Á¤º¸ (À§Ä¡, ÇöÀç Å©±â, ÇöÀç Å©±â·Î ¸ÔÀº ¹°°í±âÀÇ ¼ö)
+	static int sx, sy, ssize, seat; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
 	static int fishCount = 0;
-	static Node fish; // °Å¸®°¡ °¡Àå °¡±î¿î ¹°°í±âÀÇ Á¤º¸
+	static Node fish; // ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
 	static int N;
 	static int[][] map;
@@ -45,7 +45,7 @@ public class boj_¾Æ±â»ó¾î {
 		map = new int[N][N];
 		visited = new boolean[N][N];
 		
-		// »ó¾îÀÇ Á¤º¸
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		ssize = 2;
 		seat = 0;
 
@@ -53,7 +53,7 @@ public class boj_¾Æ±â»ó¾î {
 			StringTokenizer st = new StringTokenizer(br.readLine());	
 			for (int j = 0; j < N; j++) { 
 				map[i][j] = Integer.parseInt(st.nextToken());
-				// »ó¾îÀÇ À§Ä¡ Á¤º¸
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 				if(map[i][j] == 9) {
 					sx = i;
 					sy = j;
@@ -69,7 +69,7 @@ public class boj_¾Æ±â»ó¾î {
 			if(checkAvailable())
 				break;
 			
-			System.out.println("¹°°í±âÀÇ Á¤º¸");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			System.out.println(fish.toString());
 			
 			eat();
@@ -80,7 +80,7 @@ public class boj_¾Æ±â»ó¾î {
 	
 	
 	private static void init() {
-		fish = new Node(21, 21, 10000001); // ÃÊ±âÈ­
+		fish = new Node(21, 21, 10000001); // ï¿½Ê±ï¿½È­
 		for(int i = 0; i < N; i++) {
 			Arrays.fill(visited[i], false);
 		}
@@ -106,15 +106,15 @@ public class boj_¾Æ±â»ó¾î {
 				
 				if(x < 0 || x >= N || y < 0 || y >= N || visited[x][y]) 
 					continue;
-				if(map[x][y] > ssize) // ÀÚ½ÅÀÇ Å©±âº¸´Ù ÀÛ°Å³ª °°À» ¶§¸¸ ÀÌµ¿ °¡´É
+				if(map[x][y] > ssize) // ï¿½Ú½ï¿½ï¿½ï¿½ Å©ï¿½âº¸ï¿½ï¿½ ï¿½Û°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 					continue;
 
 				q.add(new Node(x, y, current.cnt+1));
 				visited[x][y] = true;
 				
-				// ¸ÔÀ» ¼ö ÀÖ´Â ¹°°í±â°¡ ÀÖ´Â Áö Ã¼Å©
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½Ö´ï¿½ ï¿½ï¿½ Ã¼Å©
 				if(map[x][y] != 0 && map[x][y] < ssize) {
-					if(changeFish(current)) { // ´õ °Å¸®°¡ °¡±î¿ì¸é 
+					if(changeFish(current)) { // ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 						fish.x = current.x;
 						fish.y = current.y;
 						fish.cnt = current.cnt+1;
@@ -129,11 +129,11 @@ public class boj_¾Æ±â»ó¾î {
 		return available;
 	}
 	
-	// ¾î¶² ¹°°í±â¸¦ ¸ÔÀ» Áö
+	// ï¿½î¶² ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	private static boolean changeFish(Node current) {
 		boolean change = false;
 		
-		if(current.cnt < fish.cnt) { // ´õ °Å¸®°¡ °¡±î¿ì¸é 
+		if(current.cnt < fish.cnt) { // ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 			change = true;
 		} else if(current.cnt == fish.cnt) {
 			if(current.x < fish.x) 
@@ -145,7 +145,7 @@ public class boj_¾Æ±â»ó¾î {
 	}
 	
 	private static void eat() {
-		seat++; // ¸ÔÀº ¹°°í±âÀÇ ¼ö Áõ°¡
+		seat++; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		fishCount--;
 		
 		if(seat == ssize) {
@@ -160,9 +160,9 @@ public class boj_¾Æ±â»ó¾î {
 	}
 }
 
-// ¹°°í±âÀÇ À§Ä¡¸¦ Queue¿¡ ÀúÀå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ Queueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// 1. ÀÌ¹ø ÅÏ¿¡ ¸ÔÀ» ¹°°í±â¸¦ Á¤ÇÏ±â (°Å¸® ¼ø, ÀÚ½Åº¸´Ù ÀÛÀº ¹°°í±â, µµ´ŞÇÒ ¼ö ÀÖ´ÂÁö)
-// -> ¸ÔÀ» ¼ö ÀÖ´Ù¸é ¹°°í±â±îÁöÀÇ ÃÖ´Ü °Å¸® ÇÔ²² ±¸ÇÏ±â
-// 3. ¹°°í±â ³È³È
-// 4. »ó¾îÀÇ Å©±â Áõ°¡ ¿©ºÎ
+// 1. ï¿½Ì¹ï¿½ ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½Ï±ï¿½ (ï¿½Å¸ï¿½ ï¿½ï¿½, ï¿½Ú½Åºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½)
+// -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Å¸ï¿½ ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+// 3. ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½
+// 4. ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½

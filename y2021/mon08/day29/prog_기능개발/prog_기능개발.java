@@ -1,9 +1,9 @@
-package com.mon08.day29.prog_±â´É°³¹ß;
+package y2021.mon08.day29.prog_ê¸°ëŠ¥ê°œë°œ;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class prog_±â´É°³¹ß {
+public class prog_ê¸°ëŠ¥ê°œë°œ {
 
 	static int[] progresses = {1, 1, 1, 1};
 	static int[] speeds = {100, 100, 100, 100};
@@ -13,17 +13,17 @@ public class prog_±â´É°³¹ß {
 		int[] day = new int[progresses.length];
 		
 		for (int i = 0; i < day.length; i++) {
-			int restDay = ((100 - progresses[i]) % speeds[i]) > 0 ? 1 : 0; // ³ª´©¾î ¶³¾îÁöÁö ¾Ê´Â °æ¿ì¿¡´Â +1ÀÌ ´õ ÇÊ¿ä
+			int restDay = ((100 - progresses[i]) % speeds[i]) > 0 ? 1 : 0; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ +1ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê¿ï¿½
 			day[i] = (100 - progresses[i]) / speeds[i];
 			day[i] += restDay;
 		}
 		System.out.println(Arrays.toString(day));
 	
-		int prevDay = day[0]; // ÀÌÀü ÀÛ¾÷À» ³¡³»´Âµ¥ °É¸®´Â ÀÏ¼ö
-		int count = 1; // ÀÌ¹ø ¹èÆ÷¶§ ³¡³¾ ¼ö ÀÖ´Â ÀÛ¾÷ÀÇ °³¼ö
+		int prevDay = day[0]; // ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½
+		int count = 1; // ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		for (int i = 1; i < day.length; i++) {
-			if(prevDay < day[i]) { // ÀÌÀü¹èÆ÷ÀÏ º¸´Ù ´õ ¿À·¡°É¸®´Â ÀÛ¾÷ÀÌ¶ó¸é ´ÙÀ½ ¹èÆ÷¶§·Î ¹Ì·ïÁü
-				result.add(count); // ÀÌ¹ø ¹èÆ÷´Â ±×·³ ¿©±â¼­ ³¡!
+			if(prevDay < day[i]) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½
+				result.add(count); // ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½!
 				prevDay = day[i];
 				count = 1;
 			}
@@ -31,7 +31,7 @@ public class prog_±â´É°³¹ß {
 				count++;
 			}
 		}
-		result.add(count); // ¸¶Áö¸·Àº for¹®¿¡¼­ addµÇÁö ¾Ê¾ÒÀ¸¹Ç·Î µû·Î ³Ö¾îÁÜ
+		result.add(count); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ addï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
 		
 		int[] answer = new int[result.size()];
 		for (int i = 0; i < answer.length; i++) {

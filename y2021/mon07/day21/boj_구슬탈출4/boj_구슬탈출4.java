@@ -1,4 +1,4 @@
-package mon07.day21.boj_±¸½½Å»Ãâ4;
+package y2021.mon07.day21.boj_êµ¬ìŠ¬íƒˆì¶œ4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class boj_±¸½½Å»Ãâ4 {
+public class boj_êµ¬ìŠ¬íƒˆì¶œ4 {
 
 	static int N, M;
-	static char[][] map; // ¸ÊÀÇ Á¤º¸
-	static boolean[][][][] visited; // [rx][ry][bx][by] -> (rx, ry), (bx, by)ÀÇ À§Ä¡ÀÏ ¶§ ¹æ¹®ÇÑ ¿©ºÎ
+	static char[][] map; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static boolean[][][][] visited; // [rx][ry][bx][by] -> (rx, ry), (bx, by)ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	static int[] dx = {0, 1, 0, -1};
 	static int[] dy = {1, 0, -1, 0};
 	
@@ -48,14 +48,14 @@ public class boj_±¸½½Å»Ãâ4 {
 		for (int i = 0; i < N; i++) {
 			map[i] = br.readLine().toCharArray();
 			for (int j = 0; j < M; j++) {
-				if(map[i][j] == 'R') { // »¡°£ ±¸½½ÀÇ Á¤º¸
+				if(map[i][j] == 'R') { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					rx = i;
 					ry = j;
-					map[i][j] = '.'; // ºó °ø°£À¸·Î ÃÊ±âÈ­
+					map[i][j] = '.'; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 				}else if(map[i][j] == 'B') {
 					bx = i;
 					by = j;
-					map[i][j] = '.'; // ºó °ø°£À¸·Î ÃÊ±âÈ­
+					map[i][j] = '.'; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 				}
 			}
 		}
@@ -80,28 +80,28 @@ public class boj_±¸½½Å»Ãâ4 {
 				int nbx = info.bx;
 				int nby = info.by;
 				
-				// »¡°£ ±¸½½ ÀÌµ¿
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				while(true) {
-					if(map[nrx+dx[i]][nry+dy[i]] == '#' || map[nrx][nry] == 'O') // ´ÙÀ½ÀÌ º®ÀÌ°Å³ª, ÇöÀç°¡ ±¸¸ÛÀÌ¶ó¸é break
+					if(map[nrx+dx[i]][nry+dy[i]] == '#' || map[nrx][nry] == 'O') // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°Å³ï¿½, ï¿½ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ break
 						break;
 					nrx += dx[i];
 					nry += dy[i];
 				}
 				
-				// ÆÄ¶õ ±¸½½ ÀÌµ¿
+				// ï¿½Ä¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 				while(true) {
-					if(map[nbx+dx[i]][nby+dy[i]] == '#' || map[nbx][nby] == 'O') // ´ÙÀ½ÀÌ º®ÀÌ°Å³ª, ÇöÀç°¡ ±¸¸ÛÀÌ¶ó¸é break
+					if(map[nbx+dx[i]][nby+dy[i]] == '#' || map[nbx][nby] == 'O') // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°Å³ï¿½, ï¿½ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ break
 						break;
 					nbx += dx[i];
 					nby += dy[i];
 				}
 				
 				
-				if(nrx == nbx && nry == nby){ // µÎ ±¸½½ÀÌ ÇÑ ÁÂÇ¥¿¡¼­ ¸ðÀÌ¸é ¾î¶² ±¸½½ÀÌ ¸ÕÀú ±¼·¯¿À´ÂÁö ÆÇ´ÜÇØ¾ßÇÔ
-					if(map[nrx][nry] == 'O' && map[nbx][nby] == 'O') // µÎ ±¸½½ÀÌ ±¸¸Û¿¡ ¶³¾îÁö´Â °æ¿ì
+				if(nrx == nbx && nry == nby){ // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
+					if(map[nrx][nry] == 'O' && map[nbx][nby] == 'O') // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 						continue;
 					
-					// ´ú ±¼·¯¿Â ±¸½½ÀÌ ¸ÕÀú ±¼·¯¿À´Â ±¸½½ÀÌ´Ù
+					// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
 					if((Math.abs(nrx - info.rx) + Math.abs(nry - info.ry)) < (Math.abs(nbx - info.bx) + Math.abs(nby - info.by))) {
 						nbx -= dx[i];
 						nby -= dy[i];
@@ -111,7 +111,7 @@ public class boj_±¸½½Å»Ãâ4 {
 					}
 				}
 				
-				if(visited[nrx][nry][nbx][nby]) // ÀÌ¹Ì ½ÃµµÇØº» Á¶ÇÕÀÌ¶ó¸é PASS
+				if(visited[nrx][nry][nbx][nby]) // ï¿½Ì¹ï¿½ ï¿½Ãµï¿½ï¿½Øºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ PASS
 					continue;
 				
 				q.add(new Info(nrx, nry, nbx, nby, info.count+1));

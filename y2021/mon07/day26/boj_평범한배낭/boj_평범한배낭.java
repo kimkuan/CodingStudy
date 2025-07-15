@@ -1,15 +1,15 @@
-package mon07.day26.boj_Æò¹üÇÑ¹è³¶;
+package y2021.mon07.day26.boj_í‰ë²”í•œë°°ë‚­;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_Æò¹üÇÑ¹è³¶ {
+public class boj_í‰ë²”í•œë°°ë‚­ {
 	
 	static int N, K;
 	static int[][] things;
-	static int[] dp; // ÀÏÂ÷¿ø ¹è¿­À» »ç¿ëÇÏ¸é, ÀÌÀü¿¡ °è»êÇÑ °ªÀ» ±×´ë·Î À¯Áö (ÃÖ´ë ¹«°Ô°¡ kÀÎ °¡¹æ¿¡¼­ °¡Àå Å« °¡Ä¡°¡ ³²°ÔµÊ)
+	static int[] dp; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ô°ï¿½ kï¿½ï¿½ ï¿½ï¿½ï¿½æ¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ôµï¿½)
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,12 +23,12 @@ public class boj_Æò¹üÇÑ¹è³¶ {
 		things[0][1] = 0;
 		for(int i = 1; i <= N; i++) {
 			st = new StringTokenizer(br.readLine());
-			things[i][0] = Integer.parseInt(st.nextToken()); // w ¹«°Ô
-			things[i][1] = Integer.parseInt(st.nextToken()); // v °¡Ä¡
+			things[i][0] = Integer.parseInt(st.nextToken()); // w ï¿½ï¿½ï¿½ï¿½
+			things[i][1] = Integer.parseInt(st.nextToken()); // v ï¿½ï¿½Ä¡
 		}
 
 		for (int i = 1; i <= N; i++) {
-			for(int j = K; j-things[i][0] >= 0; j--) { // K¿¡¼­ºÎÅÍ ÇöÀç ¹°°ÇÀ» ´ãÀ» ¼ö ÀÖ´Â ¹«°Ô±îÁö¸¸ Å½»ö
+			for(int j = K; j-things[i][0] >= 0; j--) { // Kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½
 				dp[j] = Math.max(dp[j], dp[j-things[i][0]] + things[i][1]);
 			}
 		}

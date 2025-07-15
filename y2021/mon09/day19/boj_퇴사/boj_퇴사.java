@@ -1,18 +1,18 @@
-package mon09.day19.boj_Åð»ç;
+package y2021.mon09.day19.boj_í‡´ì‚¬;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_Åð»ç {
+public class boj_í‡´ì‚¬ {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		
 		int[][] counseling = new int[N+2][2];
-		int[] dp = new int[N+2]; // N+1ÀÏ±îÁö °¡Àå ¸¹ÀÌ ¹ú ¼ö ÀÖ´Â µ·
+		int[] dp = new int[N+2]; // N+1ï¿½Ï±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½
 		
 		for (int i = 1; i <= N; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
@@ -23,11 +23,11 @@ public class boj_Åð»ç {
 			counseling[i][1] = price;
 		}
 		
-		// ¹éÁØÀÌ°¡ NÀÏ±îÁö ¾òÀ» ¼ö ÀÖ´Â ÃÖ´ë ¼öÀÍ ±¸ÇÏ±â
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ Nï¿½Ï±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 		dp[0] = 0;
 		dp[1] = 0;
 		for (int i = 1; i <= N+1; i++) {
-			dp[i] = Math.max(dp[i], dp[i-1]); // ÀÌÀü »ó´ãÀÌ dp[i] = 0 ÀÌ°Íº¸´Ù ´õ ¸¹Àº ÀÌµæÀ» ¾òÀ» ¼ö ÀÖÀ¸¸é 
+			dp[i] = Math.max(dp[i], dp[i-1]); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ dp[i] = 0 ï¿½Ì°Íºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 			
 			if(i + counseling[i][0] <= N+1)
 				dp[i + counseling[i][0]] = Math.max(dp[i + counseling[i][0]], dp[i] + counseling[i][1]);

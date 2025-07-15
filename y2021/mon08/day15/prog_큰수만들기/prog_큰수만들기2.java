@@ -1,8 +1,8 @@
-package com.mon08.day15.prog_Å«¼ö¸¸µé±â;
+package y2021.mon08.day15.prog_í°ìˆ˜ë§Œë“¤ê¸°;
 
 import java.util.ArrayDeque;
 
-public class prog_Å«¼ö¸¸µé±â2 {
+public class prog_í°ìˆ˜ë§Œë“¤ê¸°2 {
 
 	static String number = "41";
 	static int k = 1;
@@ -10,7 +10,7 @@ public class prog_Å«¼ö¸¸µé±â2 {
 	public static void main(String[] args) {
 		
 		ArrayDeque<Character> q = new ArrayDeque<>();
-		StringBuilder sb = new StringBuilder(); // ¸¸µé ¼ö ÀÖ´Â °¡Àå Å« ¼ıÀÚ
+		StringBuilder sb = new StringBuilder(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½
 		
 		for(int i = 0; i < number.length(); i++) {
 			while(k > 0 && !q.isEmpty()) {

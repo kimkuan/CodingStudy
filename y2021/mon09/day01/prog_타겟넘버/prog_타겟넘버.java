@@ -1,6 +1,6 @@
-package com.mon09.day01.prog_Ÿ�ٳѹ�;
+package y2021.mon09.day01.prog_타겟넘버;
 
-public class prog_Ÿ�ٳѹ� {
+public class prog_타겟넘버 {
 
 	
 	static int[] numbers = {1, 3, 3, 6, 4, 2}; 

@@ -1,4 +1,4 @@
-package mon10.day31.boj_¼û¹Ù²ÀÁú;
+package y2021.mon10.day31.boj_ìˆ¨ë°”ê¼­ì§ˆ;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class boj_¼û¹Ù²ÀÁú {
+public class boj_ìˆ¨ë°”ê¼­ì§ˆ {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,22 +31,22 @@ public class boj_¼û¹Ù²ÀÁú {
 			for(int i = 0; i < size; i++) {
 				int current = q.poll();
 
-				if(current == end)  // µ¿»ýÀ» Ã£¾Ò´Ù¸é, Ã£Àº ½Ã°£ ¹ÝÈ¯
+				if(current == end)  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Ò´Ù¸ï¿½, Ã£ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½È¯
 					return time;
 				
-				// X-1 ÀÌµ¿
+				// X-1 ï¿½Ìµï¿½
 				if(current-1 >= 0 && !visited[current-1]) { 
 					q.add(current-1);
 					visited[current-1] = true;
 				}
 				
-				// X+1 ÀÌµ¿
+				// X+1 ï¿½Ìµï¿½
 				if(current+1 <= 100000 && !visited[current+1]) { 
 					q.add(current+1);
 					visited[current+1] = true;
 				}
 				
-				// 2X ÀÌµ¿
+				// 2X ï¿½Ìµï¿½
 				if(current*2 <= 100000 && !visited[current*2]) {
 					q.add(current*2);
 					visited[current*2] = true;

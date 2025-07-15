@@ -1,15 +1,15 @@
-package com.mon08.day01.prog_¿ÀÇÂÃ¤ÆÃ¹æ;
+package y2021.mon08.day01.prog_ì˜¤í”ˆì±„íŒ…ë°©;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class prog_¿ÀÇÂÃ¤ÆÃ¹æ {
+public class prog_ì˜¤í”ˆì±„íŒ…ë°© {
 
 	
 	static String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
 	static ArrayDeque<Log> logs = new ArrayDeque<Log>();	
-	static HashMap<String, String> userMap = new HashMap<>(); // À¯ÀúÀÇ ¾ÆÀÌµð¿Í ´Ð³×ÀÓÀ» ÀúÀåÇÏ±â À§ÇÑ ¸Ê
+	static HashMap<String, String> userMap = new HashMap<>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	
 	static class Log {
 		String act;
@@ -49,12 +49,12 @@ public class prog_¿ÀÇÂÃ¤ÆÃ¹æ {
 		int idx = 0;
 		while(!logs.isEmpty()) {
 			Log log = logs.poll();
-			sb.append(userMap.get(log.uid) + "´ÔÀÌ ");
+			sb.append(userMap.get(log.uid) + "ï¿½ï¿½ï¿½ï¿½ ");
 			
 			if(log.act.equals("Enter"))
-				sb.append("µé¾î¿Ô½À´Ï´Ù.");
+				sb.append("ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ï´ï¿½.");
 			else if(log.act.equals("Leave"))
-				sb.append("³ª°¬½À´Ï´Ù.");
+				sb.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 			sb.append("\n");
 			
 			result[idx++] = sb.toString();

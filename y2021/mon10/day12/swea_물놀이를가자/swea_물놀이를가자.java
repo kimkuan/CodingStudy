@@ -1,4 +1,4 @@
-package com.mon10.day12.swea_¹°³îÀÌ¸¦°¡ÀÚ;
+package y2021.mon10.day12.swea_ë¬¼ë†€ì´ë¥¼ê°€ì;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class swea_¹°³îÀÌ¸¦°¡ÀÚ {
+public class swea_ë¬¼ë†€ì´ë¥¼ê°€ì {
 
 	static int[] dx = {0, 1, 0, -1};
 	static int[] dy = {1, 0, -1, 0};
@@ -44,7 +44,7 @@ public class swea_¹°³îÀÌ¸¦°¡ÀÚ {
 				}
 			}
 			
-			// BFS¸¦ ÀÌ¿ëÇÑ ÃÖ´Ü°Å¸® ±¸ÇÏ±â
+			// BFSï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ö´Ü°Å¸ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 			findMove(N, M, matrix, dp);
 			
 			sb.append("#" + t + " ");
@@ -58,7 +58,7 @@ public class swea_¹°³îÀÌ¸¦°¡ÀÚ {
 		
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				if(matrix[i][j] == 'W') // ÀÏ´Ü, Ãâ¹ßÁ¡À» ¸ğµÎ ³Ö¾îµÒ.
+				if(matrix[i][j] == 'W') // ï¿½Ï´ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½.
 					q.add(new Place(i, j, 0));
 			}
 		}

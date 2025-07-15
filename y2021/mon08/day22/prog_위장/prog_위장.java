@@ -1,9 +1,9 @@
-package com.mon08.day22.prog_À§Àå;
+package y2021.mon08.day22.prog_ìœ„ìž¥;
 
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class prog_À§Àå {
+public class prog_ìœ„ìž¥ {
 	
 	static String[][] clothes = {{"yellowhat", "0"}, {"bluesunglasses", "1"}, {"green_turban", "0"}};
 
@@ -29,14 +29,14 @@ public class prog_À§Àå {
 			i++;
 		}
 		
-		System.out.println(result-1); // ¸ðµÎ ´Ù ÀÔÁö ¾ÊÀ» °æ¿ì »©ÁÖ±â
+		System.out.println(result-1); // ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½
 		
 	}
 
 
 }
 
-// 1. Ä«Å×°í¸®º°·Î ¸ðÀ¸±â
-// (key-ÀÇ»óÀÇ Á¾·ù, value-°³¼ö)
+// 1. Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// (key-ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, value-ï¿½ï¿½ï¿½ï¿½)
 
-// 2.Á¶ÇÕ ±¸ÇÏ±â 
+// 2.ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ 

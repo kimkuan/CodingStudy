@@ -1,4 +1,4 @@
-package mon11.day29.boj_K¹°·ùÃ¢°í;
+package y2021.mon11.day29.boj_Kë¬¼ë¥˜ì°½ê³ ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class boj_K¹°·ùÃ¢°í {
+public class boj_Kë¬¼ë¥˜ì°½ê³  {
 	
 	static int N, M;
 	static int[] priorityCount;
@@ -30,7 +30,7 @@ public class boj_K¹°·ùÃ¢°í {
 		
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		priorityCount = new int[M+1]; // 1~M±îÁöÀÇ ¿ì¼±¼øÀ§¸¦ °¡Áø ÄÁÅ×ÀÌ³ÊÀÇ °³¼ö ÀúÀå
+		priorityCount = new int[M+1]; // 1~Mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -54,7 +54,7 @@ public class boj_K¹°·ùÃ¢°í {
 		while(!q.isEmpty()) {
 			Container container = q.pollFirst();
 
-			// ÇöÀç »Ì°íÀÚ ÇÏ´Â ¿ì¼±¼øÀ§°¡ ¸Â´ÂÁö È®ÀÎ (³·Àº ¿ì¼±¼øÀ§ºÎÅÍ ÀûÀç)
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 			if(container.prior == targetPriority) { 
 				priorityCount[container.prior]--;
 			}
@@ -64,7 +64,7 @@ public class boj_K¹°·ùÃ¢°í {
 				continue;
 			}
 
-			// ¿ì¼±¼øÀ§°¡ °°Àº ÄÁÅ×ÀÌ³Ê³¢¸® ¹«°Ô°¡ °¡º­¿î°Ô À§·Î ¿Ã¶ó°¡°Ô ÄÁÅ×ÀÌ³Ê¸¦ »­
+			// ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ê³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ó°¡°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ê¸ï¿½ ï¿½ï¿½
 			while(!stack.isEmpty() 	
 					 && stack.peek().prior == targetPriority 	
 					 && stack.peek().weight < container.weight) {
@@ -74,18 +74,18 @@ public class boj_K¹°·ùÃ¢°í {
 				 cost += temp.weight;
 			}
 			
-			// ÇöÀç ÄÁÅ×ÀÌ³Ê¸¦ ÀûÀç
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ê¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 			stack.push(container);
 			cost += container.weight;
 			 
-			// °¡º­¿î ÄÁÅ×ÀÌ³Ê¸¦ ´Ù½Ã ÀûÀç
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ê¸ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			while(!tempStack.isEmpty()) {
 				 Container temp = tempStack.pop();
 				 stack.push(temp);
 				 cost += temp.weight;
 			}
 					 
-			// ´ÙÀ½ ¿ì¼±¼øÀ§ÀÇ ÄÁÅ×ÀÌ³Ê Å½»ö
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ Å½ï¿½ï¿½
 			 if(!isRemain(targetPriority))
 				 targetPriority--;
 		}
@@ -93,7 +93,7 @@ public class boj_K¹°·ùÃ¢°í {
 		return cost;
 	}
 	
-	// ÇöÀç ¿ì¼±¼øÀ§ÀÇ ÄÁÅ×ÀÌ³Ê°¡ ·¹ÀÏ¾È¿¡ ´õ Á¸ÀçÇÏ´Â Áö Ã¼Å©
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ê°ï¿½ ï¿½ï¿½ï¿½Ï¾È¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ Ã¼Å©
 	private static boolean isRemain(int prior) {
 		return priorityCount[prior] > 0 ? true : false;
 	}

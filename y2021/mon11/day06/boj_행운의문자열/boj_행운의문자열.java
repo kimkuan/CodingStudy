@@ -1,10 +1,10 @@
-package mon11.day06.boj_青款狼巩磊凯;
+package y2021.mon11.day06.boj_頄夓毚鞚橂鞛愳棿;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class boj_青款狼巩磊凯 {
+public class boj_頄夓毚鞚橂鞛愳棿 {
 	
 	static int N;
 	static int answer = 0;

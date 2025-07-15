@@ -1,11 +1,11 @@
-package mon10.day24.boj_°¨½ÃÇÇÇÏ±â;
+package y2021.mon10.day24.boj_ê°ì‹œí”¼í•˜ê¸°;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class boj_°¨½ÃÇÇÇÏ±â {
+public class boj_ê°ì‹œí”¼í•˜ê¸° {
 
 	static int N, M = 3;
 	static String answer = "NO";
@@ -34,7 +34,7 @@ public class boj_°¨½ÃÇÇÇÏ±â {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
 				matrix[i][j] = st.nextToken().charAt(0);
-				if(matrix[i][j] == 'S') // ÇĞ»ıÀÇ À§Ä¡¸¦ ArrayList¿¡ ÀúÀå
+				if(matrix[i][j] == 'S') // ï¿½Ğ»ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ArrayListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					students.add(new Place(i, j));
 			}
 		}
@@ -46,7 +46,7 @@ public class boj_°¨½ÃÇÇÇÏ±â {
 
 	private static void setObstacle(int sx, int sy, int count) {
 		if(count == M) {
-			if(ableToMonitor()) // ¸ğµç ÇĞ»ıµéÀÌ ¼±»ı´Ô ÇÑÅ×¼­ °¨½Ã¸¦ ÇÇÇÒ ¼ö ÀÖ´ÂÁö
+			if(ableToMonitor()) // ï¿½ï¿½ï¿½ ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×¼ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½
 				answer = "YES";	
 			return;
 		}
@@ -66,7 +66,7 @@ public class boj_°¨½ÃÇÇÇÏ±â {
 		for (int i = 0; i < students.size(); i++) {
 			Place place = students.get(i);
 			
-			// »óÇÏÁÂ¿ì Å½»ö 
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ Å½ï¿½ï¿½ 
 			for(int d = 0; d < 4; d++) {
 				int nx = place.x;
 				int ny = place.y;
@@ -81,7 +81,7 @@ public class boj_°¨½ÃÇÇÇÏ±â {
 					if(matrix[nx][ny] == 'O')
 						break;
 					else if(matrix[nx][ny] == 'T') 
-						return false; // ¼±»ı´ÔÇÑÅ× °É¸².
+						return false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É¸ï¿½.
 				}
 			}
 		}

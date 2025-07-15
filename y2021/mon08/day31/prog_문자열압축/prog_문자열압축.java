@@ -1,8 +1,8 @@
-package com.mon08.day31.prog_¹®ÀÚ¿­¾ĞÃà;
+package y2021.mon08.day31.prog_ë¬¸ìì—´ì••ì¶•;
 
 import java.util.ArrayList;
 
-public class prog_¹®ÀÚ¿­¾ĞÃà {
+public class prog_ë¬¸ìì—´ì••ì¶• {
 
 	static String s = "abcabcabcabcdededededede";
 	
@@ -10,9 +10,9 @@ public class prog_¹®ÀÚ¿­¾ĞÃà {
 		
 		int answer = s.length();
 		
-		// ÀÚ¸£´Â °³¼ö (1~¹®ÀÚ¿­ÀÇ ¹İ)
+		// ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (1~ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½)
 		for (int i = 1; i <= s.length()/2; i++) {
-			System.out.println(i + "°³ ´ÜÀ§");
+			System.out.println(i + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			ArrayList<String> list = new ArrayList<>();
 			
 			// SubString
@@ -24,10 +24,10 @@ public class prog_¹®ÀÚ¿­¾ĞÃà {
 				}
 			}
 			
-			// ¸¶Áö¸· ¹®ÀÚ¿­±îÁö Ã³¸®ÇØÁÖ±â À§ÇØ ¸¶¹«¸® ¹®ÀÚ¿­ Ãß°¡
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ß°ï¿½
 			list.add("");
 			
-			// Áßº¹ ¹®ÀÚ¿­ Ä«¿îÆ®
+			// ï¿½ßºï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ Ä«ï¿½ï¿½Æ®
 			StringBuilder sb = new StringBuilder();
 			String before = "";
 			int count = 1;

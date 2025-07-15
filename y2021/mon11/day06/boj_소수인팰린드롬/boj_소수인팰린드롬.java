@@ -1,10 +1,10 @@
-package mon11.day06.boj_¼Ò¼öÀÎÆÓ¸°µå·Ò;
+package y2021.mon11.day06.boj_ì†Œìˆ˜ì¸íŒ°ë¦°ë“œë¡¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_¼Ò¼öÀÎÆÓ¸°µå·Ò {
+public class boj_ì†Œìˆ˜ì¸íŒ°ë¦°ë“œë¡¬ {
 	
 	static boolean[] isNotPrime = new boolean[100000001];
 	
@@ -16,30 +16,30 @@ public class boj_¼Ò¼öÀÎÆÓ¸°µå·Ò {
 		int a = Integer.parseInt(st.nextToken());
 		int b = Integer.parseInt(st.nextToken());
 		
-		// ¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼¸¦ ÀÌ¿ëÇÏ¿© ¼Ò¼ö¸¦ ¹Ì¸® °è»ê
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ä½ºï¿½×³×½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½
 		InitPrimeNumber();
 		
 		for(int i = a; i <= b; i++) {
-			// Æç¸°µå·ÒÀÎÁö ÆÇ´Ü
+			// ï¿½ç¸°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 			if(!isPallendrom(i))
 				continue;
 			
-			// ÇØ´ç ¼ıÀÚ°¡ ¼Ò¼öÀÎÁö ÆÇ´Ü
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 			if(isNotPrime[i]) 
 				continue;
 			
 			sb.append(i + "\n");
 		}
-		sb.append(-1); // ¸¶Áö¸· ÁÙ¿¡´Â -1À» Ãâ·Â!
+		sb.append(-1); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ -1ï¿½ï¿½ ï¿½ï¿½ï¿½!
 		System.out.print(sb.toString());
 	}
 	
-	// Æç¸°µå·Ò ÆÇ´Ü
+	// ï¿½ç¸°ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
 	private static boolean isPallendrom(int n) {
 		String str = String.valueOf(n);
-		int len = str.length(); // ÇØ´ç ¼ıÀÚÀÇ ÀÚ¸´¼ö
+		int len = str.length(); // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½
 		
-		// Â¦¼ö ÀÚ¸´¼ö ¼ıÀÚÀÎµ¥ ±× °ªÀÌ 11ÀÌ ¾Æ´Ò ¶§ -> Â¦¼ö ÀÚ¸´¼ö ¼ıÀÚÁß¿¡¼­´Â 11ÀÇ ¹è¼ö¸¸ Æç¸°µå·ÒÀÌ °¡´ÉÇÏ´Ù
+		// Â¦ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 11ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ -> Â¦ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½ï¿½ï¿½ 11ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç¸°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½
 		if(len % 2 == 0 && n != 11)
 			return false;
 		
@@ -55,14 +55,14 @@ public class boj_¼Ò¼öÀÎÆÓ¸°µå·Ò {
 		return true;
 	}
 
-	// ¼Ò¼ö ÆÇ´Ü
+	// ï¿½Ò¼ï¿½ ï¿½Ç´ï¿½
 	private static void InitPrimeNumber() {	
 		double size = Math.sqrt(100000000);
 	
 		for (int i = 2; i <= size; i++) {
-			// ¾ÆÁ÷ Áö¿öÁöÁö ¾ÊÀº °ªÀÌ¶ó¸é -> Áï, false¶ó¸é (trueÀÌ¸é ¼Ò¼ö°¡ ¾Æ´Ñ °ª)
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ -> ï¿½ï¿½, falseï¿½ï¿½ï¿½ (trueï¿½Ì¸ï¿½ ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½)
 			if(!isNotPrime[i]) {
-				// iÀÇ ¹è¼ö¿¡ ÇØ´çÇÏ´Â ¸ğµç °ªµéÀ» true·Î º¯È¯
+				// iï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½È¯
 				for (int j = i+i; j <= 100000000; j += i) {
 					isNotPrime[j] = true;
 				}

@@ -1,4 +1,4 @@
-package mon08.day28.boj_123´õÇÏ±â2;
+package y2021.mon08.day28.boj_123ë”í•˜ê¸°2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_123´õÇÏ±â2 {
+public class boj_123ë”í•˜ê¸°2 {
 
 	static int n, k, count = 0;
 	static int[] select;
@@ -30,7 +30,7 @@ public class boj_123´õÇÏ±â2 {
 			dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
 		}
 		
-		// K¹øÂ° ¿À´Â ½ÄÀÌ ¾ø´Â °æ¿ì¿¡´Â -1 Ãâ·Â
+		// Kï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ -1 ï¿½ï¿½ï¿½
 		if(dp[n] < k) {
 			System.out.println(-1);
 			return;
@@ -66,7 +66,7 @@ public class boj_123´õÇÏ±â2 {
 
 }
 
-// n : 1~10±îÁöÀÇ ÀÚ¿¬¼ö
-// k : 2^31-1 º¸´Ù ÀÛ°Å³ª °°Àº ÀÚ¿¬¼ö
+// n : 1~10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½
+// k : 2^31-1 ï¿½ï¿½ï¿½ï¿½ ï¿½Û°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½
 
-// nÀ» 1,2,3ÀÇ ÇÕÀ¸·Î ³ªÅ¸³»´Â ¹æ¹ı¿¡¼­ k¹øÂ°·Î ¿À´Â ½ÄÀ» ±¸ÇØ¶ó
+// nï¿½ï¿½ 1,2,3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ kï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¶ï¿½

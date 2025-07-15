@@ -1,6 +1,6 @@
-package com.mon09.day04.prog_5ÁÖÂ÷;
+package y2021.mon09.day04.prog_5ì£¼ì°¨;
 
-public class prog_5ÁÖÂ÷ {
+public class prog_5ì£¼ì°¨ {
 	static String word = "AAAE";
 	static int n = 5;
 	static int count = 0;

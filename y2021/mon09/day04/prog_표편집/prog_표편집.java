@@ -1,11 +1,11 @@
-package com.mon09.day04.prog_Ç¥ÆíÁý;
+package y2021.mon09.day04.prog_í‘œíŽ¸ì§‘;
 
 import java.util.Stack;
 
-public class prog_Ç¥ÆíÁý {
+public class prog_í‘œíŽ¸ì§‘ {
 
-	static int n = 8; // ¹è¿­ÀÇ °³¼ö
-	static int k = 2; // ½ÃÀÛ À§Ä¡
+	static int n = 8; // ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static int k = 2; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 	static String[] cmd = {"D 110","C","U 3","C","D 4","C","U 2","Z","Z","U 1","C"};
 	
 	public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class prog_Ç¥ÆíÁý {
 			case 'Z':
 				size++;
 				int remove = removeList.pop();
-				// ¸¸¾à º¹±¸ÇÏ´Â °ªÀÌ ÇöÀç ÀÎµ¦½ºº¸´Ù ÀÛÀ¸¸é index+1
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ index+1
 				index = remove <= index ? index+1 : index;
 				break;
 

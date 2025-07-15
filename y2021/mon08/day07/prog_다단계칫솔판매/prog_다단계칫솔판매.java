@@ -1,9 +1,9 @@
-package com.mon08.day07.prog_´Ù´Ü°èÄ©¼ÖÆÇ¸Å;
+package y2021.mon08.day07.prog_ë‹¤ë‹¨ê³„ì¹«ì†”íŒë§¤;
 
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class prog_´Ù´Ü°èÄ©¼ÖÆÇ¸Å {
+public class prog_ë‹¤ë‹¨ê³„ì¹«ì†”íŒë§¤ {
 
 	static String[] enroll = {"john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"};
 	static String[] referral = {"-", "-", "mary", "edward", "mary", "mary", "jaimie", "edward"};
@@ -11,13 +11,13 @@ public class prog_´Ù´Ü°èÄ©¼ÖÆÇ¸Å {
 	static int[] amount = {2, 3, 5, 4};
 	
 	static int[] cost;
-	static HashMap<String, Integer> index = new HashMap<>(); // ÇØ´ç Á÷¿øÀÇ ÀÎµ¦½º¸¦ ÀúÀå
+	static HashMap<String, Integer> index = new HashMap<>(); // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
 	public static void main(String[] args) {
 
-		cost = new int[enroll.length+1]; // µ·À» ³ÖÀ» ¶§´Â ÀÚ½ÅÀÇ index À§Ä¡¿¡ ³Ö±â
+		cost = new int[enroll.length+1]; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ index ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ö±ï¿½
 	
-		for (int i = 0; i < enroll.length; i++) { // ·çÆ®°¡ 0, ³ª¸ÓÁö´Â 1ºÎÅÍ ½ÃÀÛ
+		for (int i = 0; i < enroll.length; i++) { // ï¿½ï¿½Æ®ï¿½ï¿½ 0, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			index.put(enroll[i], i); 
 		}
 		for (int i = 0; i < seller.length; i++) {
@@ -27,19 +27,19 @@ public class prog_´Ù´Ü°èÄ©¼ÖÆÇ¸Å {
 	}
 
 	private static void reward(int currentIndex, int amount) {
-		System.out.println("ÇöÀç ÆÇ¸Å¿ø " + enroll[currentIndex]);
-		System.out.println("ÇöÀç ±İ¾× " + amount);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¸Å¿ï¿½ " + enroll[currentIndex]);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½İ¾ï¿½ " + amount);
 		
-		int nextAmount = amount*1/10; // ³Ñ°ÜÁÙ ¾ç
-		if(nextAmount < 1) { // 1¿ø ¹Ì¸¸ÀÏ °æ¿ì¿¡´Â ³Ñ±âÁö ¾Ê°í ÀÚ½ÅÀÌ ´Ù ¸ÔÀ½
+		int nextAmount = amount*1/10; // ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½ï¿½
+		if(nextAmount < 1) { // 1ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			cost[currentIndex] += amount;
-			return; // ±×¸®°í ³Ñ°ÜÁÖÁö ¾ÊÀ½
+			return; // ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}else {
 			cost[currentIndex] += amount - nextAmount;
 		}
 		
-		// ³Ñ°ÜÁÙ ¼ö ÀÖ´Ù¸é
-		if(referral[currentIndex].equals("-")) { // ´ÙÀ½ À§Ä¡°¡ ·çÆ®¶ó¸é ³ª´©Áö¾Ê°í ´Ù ¸ÔÀ½
+		// ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½
+		if(referral[currentIndex].equals("-")) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			return;
 		}
 		int referralIndex = index.get(referral[currentIndex]);

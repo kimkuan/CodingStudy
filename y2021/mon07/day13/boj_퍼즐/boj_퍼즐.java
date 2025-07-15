@@ -1,4 +1,4 @@
-package mon07.day13.boj_ÆÛÁñ;
+package y2021.mon07.day13.boj_í¼ì¦;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class boj_ÆÛÁñ {
+public class boj_í¼ì¦ {
 	
 	static int N = 3;
 	static int[] dx = {0, 1, 0, -1};
@@ -15,8 +15,8 @@ public class boj_ÆÛÁñ {
 	static HashMap<Integer, Integer> visited = new HashMap<Integer, Integer>();
 	
 	static class Info {
-		int index; // ÇöÀç ºóÄ­(0)ÀÇ À§Ä¡
-		int cnt; // Ã³À½ ¸ğ½À¿¡¼­ ÇöÀç ¸ğ½À±îÁö ÀÌµ¿ È½¼ö
+		int index; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä­(0)ï¿½ï¿½ ï¿½ï¿½Ä¡
+		int cnt; // Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ È½ï¿½ï¿½
 		StringBuilder str;
 		
 		public Info(int index, int cnt, StringBuilder str) {
@@ -69,9 +69,9 @@ public class boj_ÆÛÁñ {
 				temp.setCharAt(nextIndex, '0');
 				temp.setCharAt(info.index, to);
 				
-				// ¹æ¹®¿©ºÎ check
+				// ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ check
 				int num = stoi(temp.toString());
-				if(visited.containsKey(num)) continue; // ÀÌ¹Ì ¹æ¹®ÇÑ ¹è¿­ÀÎ °æ¿ì¿¡´Â Pass
+				if(visited.containsKey(num)) continue; // ï¿½Ì¹ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ Pass
 				q.add(new Info(nextIndex, info.cnt+1, temp));
 				visited.put(num, info.cnt+1);
 			}

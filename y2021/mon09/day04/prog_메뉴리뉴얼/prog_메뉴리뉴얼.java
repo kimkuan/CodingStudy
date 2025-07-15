@@ -1,11 +1,11 @@
-package com.mon09.day04.prog_¸Þ´º¸®´º¾ó;
+package y2021.mon09.day04.prog_ë©”ë‰´ë¦¬ë‰´ì–¼;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-public class prog_¸Þ´º¸®´º¾ó {
+public class prog_ë©”ë‰´ë¦¬ë‰´ì–¼ {
 
 	static HashMap<String, Integer> log = new HashMap<>();
 	static String[] orders = {"XYZ", "XWY", "WXA"};
@@ -14,7 +14,7 @@ public class prog_¸Þ´º¸®´º¾ó {
 	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) {
 		
-		// orders¿¡ ´ëÇØ¼­ sort
+		// ordersï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ sort
 		for (int i = 0; i < orders.length; i++) {
 			orders[i] = sort(orders[i]);
 		}
@@ -23,7 +23,7 @@ public class prog_¸Þ´º¸®´º¾ó {
 			combination(0, 0, orders[i]);
 		}
 
-		// °¢ ÄÚ½º¿¡ ´ëÇÑ ¸Þ´º °³¼ö¸¶´Ù ³ª¿Ã ¼ö ÀÖ´Â ÀÎ±â ¸Þ´º¸¸ list¿¡ ÀúÀå
+		// ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Î±ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		ArrayList<String> list = new ArrayList<>();
 		
 		for (int i = 0; i < course.length; i++) {
@@ -31,8 +31,8 @@ public class prog_¸Þ´º¸®´º¾ó {
 			ArrayList<String> temp = new ArrayList<>();
 			
 			for(Entry<String, Integer> entry : log.entrySet()) {
-				// ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ course[i]ÀÌ°í
-				// ±× °³¼ö°¡ 2°³ ÀÌ»óÀÎ ¸Þ´º¿¡ ´ëÇØ¼­ ÃÖ´ñ°ª ±¸ÇÏ±â
+				// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ course[i]ï¿½Ì°ï¿½
+				// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 				if(entry.getKey().length() == course[i] && entry.getValue() >= 2) {
 					if(max < entry.getValue()) {
 						temp.clear();

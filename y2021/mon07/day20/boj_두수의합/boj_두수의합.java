@@ -1,4 +1,4 @@
-package mon07.day20.boj_µÎ¼öÀÇÇÕ;
+package y2021.mon07.day20.boj_ë‘ìˆ˜ì˜í•©;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_µÎ¼öÀÇÇÕ {
+public class boj_ë‘ìˆ˜ì˜í•© {
 
 	static int N, X;
 	static int[] arr;

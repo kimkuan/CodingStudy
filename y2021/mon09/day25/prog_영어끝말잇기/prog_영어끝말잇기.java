@@ -1,8 +1,8 @@
-package com.mon09.day25.prog_¿µ¾î³¡¸»ÀÕ±â;
+package y2021.mon09.day25.prog_ì˜ì–´ëë§ì‡ê¸°;
 
 import java.util.HashSet;
 
-public class prog_¿µ¾î³¡¸»ÀÕ±â {
+public class prog_ì˜ì–´ëë§ì‡ê¸° {
 
 	static int n = 2;
 	static String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
@@ -11,16 +11,16 @@ public class prog_¿µ¾î³¡¸»ÀÕ±â {
 		
 		HashSet<String> set = new HashSet<>();
 		char lastChar;
-		int[] answer = new int[2]; // (Æ²¸° »ç¶÷ÀÇ ¹øÈ£, ¸î ¹øÂ° Â÷·Ê¿¡¼­ Æ²·È´ÂÁö)
+		int[] answer = new int[2]; // (Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£, ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ Æ²ï¿½È´ï¿½ï¿½ï¿½)
 		
-		set.add(words[0]); // Ã¹¹øÂ° ´Ü¾î
-		lastChar = words[0].charAt(words[0].length()-1); // Ã¹¹øÂ° ´Ü¾îÀÇ ¸¶Áö¸· ¹®ÀÚ
+		set.add(words[0]); // Ã¹ï¿½ï¿½Â° ï¿½Ü¾ï¿½
+		lastChar = words[0].charAt(words[0].length()-1); // Ã¹ï¿½ï¿½Â° ï¿½Ü¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
-		// µÎ¹øÂ° ´Ü¾îºÎÅÍ Ã¼Å©
+		// ï¿½Î¹ï¿½Â° ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 		for (int i = 1; i < words.length; i++) {
 			
-			// 1. ÀÌÀü »ç¶÷ÀÌ ¸»ÇÑ ´Ü¾îÀÇ ¸¶Áö¸· ¹®ÀÚ¿Í ÇöÀç ´Ü¾îÀÇ Ã¹¹øÂ° ¹®ÀÚ¸¦ ºñ±³
-			// 2. ÀÌÀü »ç¶÷ÀÌ ¸»ÇÑ ´Ü¾îÀÎÁö È®ÀÎ
+			// 1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¾ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½
+			// 2. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 			if(lastChar != words[i].charAt(0) || set.contains(words[i])) {
 				// gameout
 				answer[0] = (i % n) + 1;

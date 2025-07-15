@@ -1,6 +1,6 @@
-package com.mon08.day29.prog_´Ü¾îº¯È¯;
+package y2021.mon08.day29.prog_ë‹¨ì–´ë³€í™˜;
 
-public class prog_´Ü¾îº¯È¯ {
+public class prog_ë‹¨ì–´ë³€í™˜ {
 
 	static String begin = "hit";
 	static String target = "cog";
@@ -10,11 +10,11 @@ public class prog_´Ü¾îº¯È¯ {
 	
 	public static void main(String[] args) {
 
-		// 1. targetÀÌ words¾È¿¡ ÀÖ´Â Áö Ã¼Å©
-		// 1-1. ¾ø´Ù¸é 0¸¦ return 
-		// 1-2. ÀÖ´Ù¸é ¾ËÆÄºªÀ» ÇÏ³ª¾¿ º¯°æÇØ°¡¸é¼­ targetÀ¸·Î º¯È¯
+		// 1. targetï¿½ï¿½ wordsï¿½È¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ Ã¼Å©
+		// 1-1. ï¿½ï¿½ï¿½Ù¸ï¿½ 0ï¿½ï¿½ return 
+		// 1-2. ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½é¼­ targetï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 		
-		// 2. dfs ¹æ½ÄÀ¸·Î ¾ËÆÄºªÀ» º¯È¯ (´Ü¾îÀÇ ±æÀÌ´Â 10ÀÌÇÏ)
+		// 2. dfs ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ ï¿½ï¿½È¯ (ï¿½Ü¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ 10ï¿½ï¿½ï¿½ï¿½)
 		selected = new boolean[words.length];
 		
 		if(isPossible(target))
@@ -37,16 +37,16 @@ public class prog_´Ü¾îº¯È¯ {
 			return;
 		}
 		
-		// begin°ú targetÀÇ Ã¹¹øÂ° ¾ËÆÄºªºÎÅÍ º¯°æ°¡´ÉÇÑ ´Ü¾î°¡ ÀÖ´ÂÁö Ã¼Å© 
+		// beginï¿½ï¿½ targetï¿½ï¿½ Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ°¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¾î°¡ ï¿½Ö´ï¿½ï¿½ï¿½ Ã¼Å© 
 		for (int i = 0; i < words.length; i++) {
 			if(selected[i] || !compareWord(now, words[i])) continue;
 			selected[i] = true;
-			getChangeCount(words[i], changeCount+1); // ÀÖÀ¸¸é ±× ±æ·Î °¡º¸±â
+			getChangeCount(words[i], changeCount+1); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			selected[i] = false;
 		}
 	}
 	
-	// µÎ ¹®ÀÚ¿­ÀÇ Â÷ÀÌ°¡ 1°³ÀÎÁö Ã¼Å©
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 	private static boolean compareWord(String now, String word) {
 		int count = 0;
 		for (int i = 0; i < now.length(); i++) {

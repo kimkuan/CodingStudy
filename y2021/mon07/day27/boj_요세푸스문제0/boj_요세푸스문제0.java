@@ -1,4 +1,4 @@
-package mon07.day27.boj_¿ä¼¼Çª½º¹®Á¦0;
+package y2021.mon07.day27.boj_ìš”ì„¸í‘¸ìŠ¤ë¬¸ì œ0;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class boj_¿ä¼¼Çª½º¹®Á¦0 {
+public class boj_ìš”ì„¸í‘¸ìŠ¤ë¬¸ì œ0 {
 
 	static int N, K;
 	static ArrayList<Integer> list = new ArrayList<Integer>();

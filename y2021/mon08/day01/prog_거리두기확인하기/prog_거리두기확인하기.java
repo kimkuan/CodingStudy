@@ -1,9 +1,9 @@
-package com.mon08.day01.prog_°Å¸®µÎ±âÈ®ÀÎÇÏ±â;
+package y2021.mon08.day01.prog_ê±°ë¦¬ë‘ê¸°í™•ì¸í•˜ê¸°;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 
-public class prog_°Å¸®µÎ±âÈ®ÀÎÇÏ±â {
+public class prog_ê±°ë¦¬ë‘ê¸°í™•ì¸í•˜ê¸° {
 
 	static int N = 5;
 	static String[][] places = {
@@ -34,7 +34,7 @@ public class prog_°Å¸®µÎ±âÈ®ÀÎÇÏ±â {
 		
 		for (int i = 0; i < persons.size(); i++) {
 			int[] person = persons.get(i);
-			q.add(new int[] {person[0], person[1], person[2]}); // Áö¿øÀÚÀÇ À§Ä¡¸¦ ±âÁØÀ¸·Î °Å¸® 2ÀÌÇÏ¸¸ Ã¼Å©
+			q.add(new int[] {person[0], person[1], person[2]}); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ 2ï¿½ï¿½ï¿½Ï¸ï¿½ Ã¼Å©
 			
 			while(!q.isEmpty()) {
 				int x = q.peek()[0];
@@ -51,10 +51,10 @@ public class prog_°Å¸®µÎ±âÈ®ÀÎÇÏ±â {
 					if(cnt == 2) 
 						continue;
 					
-					if(map[nx][ny] == 'P') // °Å¸®°¡ 2ÀÌÇÏÀÎµ¥ ±× ¾È¿¡ »ç¶÷ÀÌ ÀÖÀ» °æ¿ì
+					if(map[nx][ny] == 'P') // ï¿½Å¸ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 						return 0;
 					
-					if(map[nx][ny] == 'O') // °Å¸®°¡ 2 ÀÌÇÏÀÎµ¥ ´ÙÀ½ÀÌ ºóÅ×ÀÌºíÀÏ °æ¿ì (Áï, ÆÄÆ¼¼ÇÀº ³ÖÁö ¾ÊÀ½)
+					if(map[nx][ny] == 'O') // ï¿½Å¸ï¿½ï¿½ï¿½ 2 ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½ï¿½, ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 						q.add(new int[] {nx, ny, cnt+1});
 				}
 			}
@@ -70,7 +70,7 @@ public class prog_°Å¸®µÎ±âÈ®ÀÎÇÏ±â {
 			for (int j = 0; j < N; j++) {
 				map[i][j] = place[i].charAt(j);
 				if(map[i][j] == 'P') {
-					persons.add(new int[] {i, j, 0}); // ÀÀ½ÃÀÚÀÇ À§Ä¡¿Í °Å¸® ÀúÀå
+					persons.add(new int[] {i, j, 0}); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 				}
 			}
 		}

@@ -1,15 +1,15 @@
-package mon10.day09.boj_¿¬»êÀÚ³¢¿ö³Ö±â;
+package y2021.mon10.day09.boj_ì—°ì‚°ìë¼ì›Œë„£ê¸°;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_¿¬»êÀÚ³¢¿ö³Ö±â {
+public class boj_ì—°ì‚°ìë¼ì›Œë„£ê¸° {
 
 	static int N, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
 	static int[] arr;
-	static int[] operation; // µ¡¼À, »¬¼À, °ö¼À, ³ª´°¼ÀÀÇ °³¼ö
+	static int[] operation; // ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
@@ -36,7 +36,7 @@ public class boj_¿¬»êÀÚ³¢¿ö³Ö±â {
 		System.out.println(min);
 	}
 	
-	// depth´Â ¿¬»êÀÚ °³¼ö¸¦ ±âÁØÀ¸·Î ÇÑ´Ù. (0ºÎÅÍ ½ÃÀÛ)
+	// depthï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½. (0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	private static void getMinAndMax(int depth, int result) {
 		if(depth == N-1) {
 			min = Math.min(result, min);
@@ -53,7 +53,7 @@ public class boj_¿¬»êÀÚ³¢¿ö³Ö±â {
 		}
 	}
 	
-	// ÀÌÀü¿¡ ¼±ÅÃÇÑ ¿¬»êÀÚ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private static int calculate(int operIndex, int prev, int next) {
 		switch(operIndex) {
 		case 0: 

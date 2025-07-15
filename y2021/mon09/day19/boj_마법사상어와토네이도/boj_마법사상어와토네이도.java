@@ -1,19 +1,19 @@
-package mon09.day19.boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ;
+package y2021.mon09.day19.boj_ë§ˆë²•ì‚¬ìƒì–´ì™€í† ë„¤ì´ë„;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
+public class boj_ë§ˆë²•ì‚¬ìƒì–´ì™€í† ë„¤ì´ë„ {
 	static int N;
 	static int[][] map;
 	static int result = 0;
 	
-	static int[] dx = {0, 1, 0, -1}; // ¿Þ -> ¾Æ·¡ -> ¿À¸¥ -> À§
+	static int[] dx = {0, 1, 0, -1}; // ï¿½ï¿½ -> ï¿½Æ·ï¿½ -> ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½
 	static int[] dy = {-1, 0, 1, 0};
 	
-	static int[][] percent = { // y¸¦ ±âÁØÀ¸·Î (x, y, percent) (¹Ù¶÷ÀÌ ¿ÞÂÊÀ¸·Î ºÒ ¶§)
+	static int[][] percent = { // yï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (x, y, percent) (ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½)
 			{-2, 0, 2}, 
 			{-1, -1, 10}, 
 			{-1, 0, 7},
@@ -25,9 +25,9 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 			{2, 0, 2},
 			{0, -1, 0}
 	};
-	// ¹Ù¶÷ÀÌ ¿À¸¥ÂÊÀ¸·Î ºÒ ¶§ -> (0, -2, 5) / (x, y) -> (x, -y) º¯°æ
-	// ¹Ù¶÷ÀÌ À§ÂÊÀ¸·Î ºÒ ¶§ -> (0, -2, 5) -> (-2, 0, 5)  / (x, y) -> (y, x) º¯°æ
-	// ¹Ù¶÷ÀÌ ¾Æ·¡ÂÊÀ¸·Î ºÒ ¶§ -> (0, -2, 5) -> (2, 0, 5) / (x, y) -> (-y, x) º¯°æ 
+	// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ -> (0, -2, 5) / (x, y) -> (x, -y) ï¿½ï¿½ï¿½ï¿½
+	// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ -> (0, -2, 5) -> (-2, 0, 5)  / (x, y) -> (y, x) ï¿½ï¿½ï¿½ï¿½
+	// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ -> (0, -2, 5) -> (2, 0, 5) / (x, y) -> (-y, x) ï¿½ï¿½ï¿½ï¿½ 
 	
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -64,7 +64,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 				num++;
 				count = 0;
 			}
-			// Á¾·á Á¶°Ç
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			else if(num == N && count == 3) {
 				break;
 			}
@@ -78,7 +78,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 		int restSand = sand;
 		int[][] temp = new int[percent.length][3];
 
-		// ¹Ù¶÷ÀÌ ¿ÞÂÊÀ¸·Î ºÒ ¶§
+		// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		if(d == 0) {
 			for (int i = 0; i < temp.length; i++) {
 				temp[i][0] = percent[i][0]; 
@@ -86,7 +86,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 				temp[i][2] = percent[i][2];
 			}
 		}
-		// ¹Ù¶÷ÀÌ ¾Æ·¡ÂÊÀ¸·Î ºÒ ¶§
+		// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		else if(d == 1) {
 			for (int i = 0; i < temp.length; i++) {
 				temp[i][0] = percent[i][1] * (-1); 
@@ -94,7 +94,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 				temp[i][2] = percent[i][2];
 			}
 		}
-		// ¹Ù¶÷ÀÌ ¿À¸¥ÂÊÀ¸·Î ºÒ ¶§
+		// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		else if(d == 2) {
 			for (int i = 0; i < temp.length; i++) {
 				temp[i][0] = percent[i][0]; 
@@ -103,7 +103,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 					
 			}
 		}
-		// ¹Ù¶÷ÀÌ À§ÂÊÀ¸·Î ºÒ ¶§
+		// ï¿½Ù¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		else {
 			for (int i = 0; i < temp.length; i++) {
 				temp[i][0] = percent[i][1]; 
@@ -112,20 +112,20 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 			}
 		}
 		
-		// ¸ð·¡ ÀÌµ¿½ÃÅ°±â
+		// ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å°ï¿½ï¿½
 		for (int i = 0; i < temp.length; i++) {
 			int wx = x + temp[i][0];
 			int wy = y + temp[i][1];
 			int wsand = (int)(sand * ((double)temp[i][2] / 100));
 			int inputSand = 0;
 			
-			// ¸¶Áö¸· aÀÚ¸®¿¡´Â ³²Àº ¸ð·¡ÀÇ ¾çÀ» ÀÔ·Â
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ aï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 			if(i == temp.length-1) 
 				inputSand = restSand;
 			else 
 				inputSand = wsand;
 			
-			// ¹üÀ§¸¦ ¹þ¾î³ª¸é result¿¡ ¸ð·¡¸¦ ÀúÀå
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³ªï¿½ï¿½ resultï¿½ï¿½ ï¿½ð·¡¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if(wx < 0 || wx >= N || wy < 0 || wy >= N) 
 				result += inputSand;
 			else 
@@ -134,7 +134,7 @@ public class boj_¸¶¹ý»ç»ó¾î¿ÍÅä³×ÀÌµµ {
 			restSand -= wsand;
 		}
 		
-		// Åä³×ÀÌµµ°¡ ¿òÁ÷ÀÎ ÀÚ¸®¿¡´Â 0
+		// ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ 0
 		map[x][y] = 0;
 	}
 }
