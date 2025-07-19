@@ -18,6 +18,7 @@ public class boj_줄세우기 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder stringBuilder = new StringBuilder();
 
         int P = Integer.parseInt(bufferedReader.readLine());
 
@@ -28,8 +29,13 @@ public class boj_줄세우기 {
 
             mergeSort(tempStudents, 0, tempStudents.length - 1);
 
-            System.out.println(testCase + " " + result);
+            stringBuilder.append(testCase);
+            stringBuilder.append(" ");
+            stringBuilder.append(result);
+            stringBuilder.append("\n");
         }
+
+        System.out.println(stringBuilder);
     }
 
     private static void initResult() {
@@ -53,7 +59,7 @@ public class boj_줄세우기 {
 
     /**
      * 병합 정렬을 사용하여 학생들을 정렬하는 메소드.
-     * 해당 함수를 재귀호출하여 가장 작은 단위로 분할 후 합병한다.
+     * 해당 함수를 재귀호출하여 가장 작은 단위로 분할 후 합병한다. O(NlogN)
      * @param tempStudents
      * @param left
      * @param right
