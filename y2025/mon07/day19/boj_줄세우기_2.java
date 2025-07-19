@@ -59,15 +59,17 @@ public class boj_줄세우기_2 {
     private static void insertionSort() {
         int size = students.length;
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < i; j++) { // 맨 앞부터 i-1까지 비교해 정렬하며 한 칸씩 뒤로 보낸다.
-                if (students[i] < students[j]) {
-                    int temp = students[j];
-                    students[j] = students[i];
-                    students[i] = temp;
-                    result++;
-                }
+        for (int i = 1; i < size; i++) {
+            int target = students[i]; // 현재 삽입할 대상 학생의 키
+            int j = i - 1;
+
+            while (j >= 0 && students[j] > target) { // 대상 학생의 키보다 큰 경우에 뒤로 한칸 밀어낸다.
+                students[j + 1] = students[j];
+                result++;
+                j--;
             }
+
+            students[j + 1] = target; // 찾은 위치에 대상 학생을 둔다.
         }
     }
 }
